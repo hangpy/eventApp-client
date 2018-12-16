@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import BottomNavigator from "./components/BottomNavigator";
+import TopNavigator from "./components/TopNavigator";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,6 +23,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <TopNavigator/>
         <BottomNavigator/>
       </View>
     );
@@ -30,7 +32,6 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-
+  flex: 1,
   }
 });
