@@ -43,7 +43,7 @@ export default createBottomTabNavigator({
 }, {
     tabBarOptions: {
         showLabel: true, // hide labels
-        activeTintColor: '#dd6453', // active icon color
+        activeTintColor: '#ff2d55', // active icon color
         inactiveTintColor: '#857e7e',  // inactive icon color
         style: {
             backgroundColor: '#ffffff' // TabBar background

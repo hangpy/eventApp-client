@@ -14,7 +14,7 @@ export default class TopNavigator extends Component <{}> {
 		return (
 			<Header
 				leftComponent={{ icon: 'search', color: '#000' }}
-				centerComponent={{ text: 'COODIE', style: { color: '#000' } }}
+				centerComponent={{ text: 'COODIE', style: { color: '#000', fontWeight: 'bold' } }}
 				rightComponent={{ icon: 'navigation', color: '#000' }}
 				backgroundColor={'#fff'}
 				containerStyle={{

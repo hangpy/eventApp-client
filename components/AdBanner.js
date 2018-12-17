@@ -26,6 +26,7 @@ export default class AdBanner extends Component <{}> {
         return (
             <ScrollView horizontal
                         showsHorizontalScrollIndicator={false}>
+                {/* banner part to be fetched later */}
                 <FlatList horizontal={true}
                     data={this.state.banners}
                     renderItem={
