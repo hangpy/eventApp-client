@@ -24,7 +24,8 @@ export default class AdBanner extends Component <{}> {
 
     render() {
         return (
-            <ScrollView horizontal>
+            <ScrollView horizontal
+                        showsHorizontalScrollIndicator={false}>
                 <FlatList horizontal={true}
                     data={this.state.banners}
                     renderItem={
@@ -46,13 +47,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: screenHeight * 0.02,
-        marginRight: screenWidth * 0.02,
-        marginLeft: screenWidth * 0.05,
+        marginRight: screenWidth * 0.01,
+        marginLeft: screenWidth * 0.03,
         marginBottom: screenHeight * 0.02,
         borderRadius: 10,
-        backgroundColor: '#848060',
-        width: screenWidth * 0.8,
-        height: screenHeight * 0.15
+        backgroundColor: '#dd3e3a',
+        width: screenWidth * 0.9,
+        height: screenHeight * 0.15,
+        shadowColor: '#000',
+        shadowOffset: { width: 1, height: 1 },
+        shadowOpacity: 0.6,
+        shadowRadius: 3,
     },
     bannerText: {
         fontSize: 15,
