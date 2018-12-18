@@ -1,5 +1,5 @@
 /** 
- * AlianceEventScroll.js
+ * AlianceEventList.js
  * @author 
  * created on 2018-12-16
  */
@@ -8,8 +8,9 @@ import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView, FlatList, Dimensions} from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
 import { makeSquareRatio, makeSquareMargin} from './styles/Style'
+import AllianceEventCard from "./AllianceEventCard";
 
-export default class AllianceEventScroll extends Component <{}> {
+export default class AllianceEventList extends Component <{}> {
 
     state = {
         banners: null
@@ -18,9 +19,9 @@ export default class AllianceEventScroll extends Component <{}> {
     componentWillMount(): void {
         this.setState({
             banners: [
-                { key: 'Banner1' },
-                { key: 'Banner2' },
-                { key: 'Banner3' },
+                { key: 'Card1', description: 'description1' },
+                { key: 'Card2', description: 'description2'  },
+                { key: 'Card3', description: 'description2'  },
             ],
         });
     }
@@ -36,20 +37,17 @@ export default class AllianceEventScroll extends Component <{}> {
                     </View>
                     <Icon name='ios-arrow-forward' size={40} style={styles.margin}/>
                 </View>
-                <ScrollView showsHorizontalScrollIndicator={false}>
-                    {/* banner part to be fetched later */}
-                    <FlatList data={this.state.banners}
-						  renderItem={
-							  (item) => (
-								  <View style={[styles.bannerContainer,
-                                      makeSquareRatio(0.92).sixteenToNine,
-                                      makeSquareMargin(0.92).marginForVerticalBanner]}>
-									  <Text style={styles.bannerText}>{item.key}</Text>
-								  </View>
-							  )
-						  }
-                    />
-                </ScrollView>
+                {/* banner part to be fetched later */}
+                <FlatList data={this.state.banners}
+                      renderItem={
+                          // must embrace parameter with {, }
+                          ({item}) => (
+                              <AllianceEventCard
+                                  item={item}
+                              />
+                          )
+                      }
+                />
             </View>
         );
 	}
@@ -72,16 +70,6 @@ const styles = StyleSheet.create({
     margin: {
         marginLeft: screenWidth * 0.05,
         marginRight: screenWidth * 0.01
-    },
-    bannerContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 10,
-        backgroundColor: '#5dc055',
-        shadowColor: '#000',
-        shadowOffset: { width: 1, height: 1 },
-        shadowOpacity: 0.6,
-        shadowRadius: 3,
     },
     bannerText: {
         fontSize: 15,

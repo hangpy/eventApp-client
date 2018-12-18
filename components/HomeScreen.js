@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView } from 'react-native';
 import AdBanner from "./AdBanner";
 import HotEventBanner from "./HotEventBanner";
-import AllianceEventScroll from "./AlianceEventScroll";
+import AllianceEventList from "./AlianceEventList";
 
 export default class HomeScreen extends Component <{}> {
 		
@@ -17,7 +17,7 @@ export default class HomeScreen extends Component <{}> {
             <ScrollView  showsVerticalScrollIndicator={false}>
                 <AdBanner/>
                 <HotEventBanner/>
-                <AllianceEventScroll/>
+                <AllianceEventList/>
 		    </ScrollView>
         );
 	}

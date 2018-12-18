@@ -1,6 +1,6 @@
 /**
  * Style.js
- * These style sheets are for traits each components should be required commonly
+ * This style chunks suppose several ways to define components' shape with functions
  * @hangpy
  * created on 2018-12-17
  */
@@ -11,7 +11,7 @@ export const DeviceScreen = {
     height: Dimensions.get('window').height
 };
 
-/* this ratio is to be standard for other length in case for any device platform */
+/* parameter is for to be standard for other length in case for any device platform */
 export const makeSquareRatio = (widthRatio) => StyleSheet.create({
     fourToThree: {
         width: DeviceScreen.width * widthRatio,

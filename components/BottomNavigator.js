@@ -7,10 +7,6 @@ import FavoriteScreen from "./FavoriteScreen";
 import ProfileScreen from "./ProfileScreen";
 import SettingScreen from "./SettingScreen";
 
-
-
-
-
 export default createBottomTabNavigator({
     Home: {
         screen: HomeScreen,
