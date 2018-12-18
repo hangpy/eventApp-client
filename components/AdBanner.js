@@ -5,6 +5,7 @@
 
 import React, { Component } from 'react';
 import { ScrollView, FlatList, View, StyleSheet, Text, Dimensions } from 'react-native';
+import { makeSquareRatio, makeSquareMargin } from  './styles/Style';
 
 export default class AdBanner extends Component <{}> {
 
@@ -28,10 +29,14 @@ export default class AdBanner extends Component <{}> {
                         showsHorizontalScrollIndicator={false}>
                 {/* banner part to be fetched later */}
                 <FlatList horizontal={true}
+                    marginRight={10}
                     data={this.state.banners}
                     renderItem={
                         (item) => (
-                            <View style={styles.bannerContainer}>
+                            <View style={[
+                                styles.bannerContainer,
+                                makeSquareRatio(0.88).threeToOne,
+                                makeSquareMargin(0.88).marginShowingNextBanner]}>
                                 <Text style={styles.bannerText}>{item.key}</Text>
                             </View>
                         )
@@ -47,14 +52,8 @@ const styles = StyleSheet.create({
     bannerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: screenHeight * 0.02,
-        marginRight: screenWidth * 0.01,
-        marginLeft: screenWidth * 0.03,
-        marginBottom: screenHeight * 0.02,
         borderRadius: 10,
         backgroundColor: '#dd3e3a',
-        width: screenWidth * 0.9,
-        height: screenHeight * 0.15,
         shadowColor: '#000',
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 0.6,

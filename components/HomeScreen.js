@@ -14,7 +14,7 @@ export default class HomeScreen extends Component <{}> {
 		
 	render() {
 		return (
-            <ScrollView>
+            <ScrollView  showsVerticalScrollIndicator={false}>
                 <AdBanner/>
                 <HotEventBanner/>
                 <AllianceEventScroll/>

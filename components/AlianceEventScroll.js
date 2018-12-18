@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView, FlatList, Dimensions} from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
+import { makeSquareRatio, makeSquareMargin} from './styles/Style'
 
 export default class AllianceEventScroll extends Component <{}> {
 
@@ -40,7 +41,9 @@ export default class AllianceEventScroll extends Component <{}> {
                     <FlatList data={this.state.banners}
 						  renderItem={
 							  (item) => (
-								  <View style={styles.bannerContainer}>
+								  <View style={[styles.bannerContainer,
+                                      makeSquareRatio(0.92).sixteenToNine,
+                                      makeSquareMargin(0.92).marginForVerticalBanner]}>
 									  <Text style={styles.bannerText}>{item.key}</Text>
 								  </View>
 							  )
@@ -73,14 +76,8 @@ const styles = StyleSheet.create({
     bannerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: screenHeight * 0.02,
-        marginRight: screenWidth * 0.01,
-        marginLeft: screenWidth * 0.03,
-        marginBottom: screenHeight * 0.02,
         borderRadius: 10,
         backgroundColor: '#5dc055',
-        width: screenWidth * 0.9,
-        height: screenHeight * 0.25,
         shadowColor: '#000',
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 0.6,
