@@ -21,14 +21,16 @@ export default class AccountCard extends Component <{}> {
 				Shadowing]}>
 				<View style={[styles.profileImageBox, {flex: 6},
                     makeRadius(undefined, true, true,false,false)]}>
-					<View style={[styles.profileImage]}>
-						{/* To be fetch */}
-						<Image source={{uri: '/Users/ihangbok/dev/project/eventApp/client/components/styles/profile_ex.jpeg'}}
-							   style={{width: '100%', height: '100%'}}/>
-						<View style={[styles.camera, Shadowing]}>
-                            <Icon name={'ios-camera'} color={'white'} size={DeviceScreen.width*0.92/4/4*0.7}/>
+					<View>
+						<View style={[styles.profileImage]}>
+							{/* To be fetch */}
+							<Image source={{uri: '/Users/ihangbok/dev/project/eventApp/client/components/styles/profile_ex.jpeg'}}
+								   style={{width: '100%', height: '100%'}}/>
 						</View>
-					</View>
+                        <View style={[styles.camera, Shadowing]}>
+                            <Icon name={'ios-camera'} color={'white'} size={DeviceScreen.width*0.92/4/4*0.7}/>
+                        </View>
+                    </View>
 				</View>
 				<View style={[styles.nameBox, {flex: 1}]}>
 					<Text style={[styles.name]}>
@@ -50,7 +52,7 @@ export default class AccountCard extends Component <{}> {
 				</View>
 				<View style={[styles.unRegisterBox, {flex: 1.5},
                     makeRadius(undefined, false, false,true,true)]}>
-					{/* to be touchable */}
+					{/* to be touchable and for alarm box to be shown */}
 					<Text style={{fontSize: 11, color: '#8b8b8b', marginRight: 15}}>회원탈퇴</Text>
 				</View>
 		    </View>
