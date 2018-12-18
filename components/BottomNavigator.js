@@ -1,13 +1,25 @@
+/**
+ * BottomNavigator.js
+ * @author hangpy
+ * created on 2018-12-16
+ */
+
 import React, {Component} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeScreen from "./HomeScreen";
-import FavoriteScreen from "./FavoriteScreen";
-import ProfileScreen from "./ProfileScreen";
-import SettingScreen from "./SettingScreen";
+import HomeScreen from "./HomeScreen/HomeScreen";
+import FavoriteScreen from "./FavoriteScreen/FavoriteScreen";
+import ProfileScreen from "./ProfileScreen/ProfileScreen";
+import SettingScreen from "./SerttingScreen/SettingScreen";
 
 export default createBottomTabNavigator({
+    /**
+     * TODO
+     * animation: bottom navigator => adapt animation to each button
+     * when click banner or card in home screen, this bottom navigator must be disappeared, which
+     * might be implemented as stack navigation.
+     */
     Home: {
         screen: HomeScreen,
         navigationOptions: {
@@ -40,7 +52,7 @@ export default createBottomTabNavigator({
     tabBarOptions: {
         showLabel: true, // hide labels
         activeTintColor: '#ff2d55', // active icon color
-        inactiveTintColor: '#857e7e',  // inactive icon color
+        inactiveTintColor: '#c5c5c5',  // inactive icon color
         style: {
             backgroundColor: '#ffffff' // TabBar background
         },

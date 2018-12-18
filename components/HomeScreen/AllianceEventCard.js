@@ -1,12 +1,12 @@
 /**
  * AllianceEventCard.js
- * @author
+ * @author hangpy
  * created on 2018-12-18
  */
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
-import { makeSquareMargin, makeSquareRatio, DeviceScreen } from "./styles/Style";
+import { makeMargin, makeSquareRatio, makeRadius, DeviceScreen } from "../styles/Style";
 
 export default class AllianceEventCard extends Component <{}> {
 
@@ -14,12 +14,16 @@ export default class AllianceEventCard extends Component <{}> {
 		return (
 		    <View style={[styles.cardContainer,
                 makeSquareRatio(0.92).sixteenToNine,
-                makeSquareMargin(0.92).marginForVerticalBanner]}>
-		        <View style={styles.eventImage}>
+                makeMargin(0.92).marginVertical]}>
+		        <View style={[
+		            styles.eventImage,
+                    makeRadius(undefined, true, true,false,false)]}>
                     {/* Image part to be fetch */}
                     <Text style={{color: '#fff'}}>{this.props.item.key} Image</Text>
                 </View>
-                <View style={styles.eventDescription}>
+                <View style={[
+                    styles.eventDescription,
+                    makeRadius(undefined, false, false,true,true)]}>
                     {/* Description part to be fetch */}
                     <Text>{this.props.item.description}</Text>
                 </View>
@@ -42,8 +46,6 @@ const styles = StyleSheet.create({
 	    flex: 0.7,
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopLeftRadius: cornerRadius,
-        borderTopRightRadius: cornerRadius,
         width: DeviceScreen.width * 0.92,
         backgroundColor: '#9ddd99',
     },
@@ -51,8 +53,6 @@ const styles = StyleSheet.create({
 	    flex: 0.3,
         justifyContent: 'center',
         alignItems: 'center',
-        borderBottomLeftRadius: cornerRadius,
-        borderBottomRightRadius: cornerRadius,
         width: DeviceScreen.width * 0.92,
         backgroundColor: '#fff',
     }

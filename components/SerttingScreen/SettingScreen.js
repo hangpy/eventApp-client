@@ -1,18 +1,18 @@
 /** 
- * ProfileScreen.js
- * @author 
+ * SettingScreen.js
+ * @author hangpy
  * created on 2018-12-16
  */
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
 
-export default class ProfileScreen extends Component <{}> {
+export default class SettingScreen extends Component <{}> {
 		
 	render() {
 		return (
 		    <View style={styles.container}>
-		        <Text>Profile Screen</Text>
+		        <Text>Setting Screen</Text>
 		    </View>
         );
 	}

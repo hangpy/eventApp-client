@@ -1,13 +1,13 @@
 /**
  * HotEventBanner.js
- * @author
+ * @author hangpy
  * created on 2018-12-16
  */
 
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, FlatList, ScrollView, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { makeSquareRatio, makeSquareMargin} from './styles/Style';
+import { makeSquareRatio, makeMargin} from '../styles/Style';
 
 export default class HotEventBanner extends Component <{}> {
 
@@ -43,10 +43,10 @@ export default class HotEventBanner extends Component <{}> {
 							  marginRight={10}
 							  data={this.state.banners}
 							  renderItem={
-								  (item) => (
+								  ({item}) => (
 									  <View style={[styles.bannerContainer,
 										  makeSquareRatio(0.88).sixteenToNine,
-										  makeSquareMargin(0.88).marginShowingNextBanner]}>
+										  makeMargin(0.88).marginShowingNext]}>
 										  <Text style={styles.bannerText}>{item.key}</Text>
 									  </View>
 								  )

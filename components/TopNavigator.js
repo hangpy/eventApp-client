@@ -1,6 +1,6 @@
 /**
  * TopNavigator.js
- * @author
+ * @author hangpy
  * created on 2018-12-16
  */
 
@@ -12,6 +12,12 @@ export default class TopNavigator extends Component <{}> {
 
 	render() {
 		return (
+            /**
+			 * TODO
+             * leftComponent: searching => only showing in Home, Favorite
+             * rightComponent: location => only showing in Home
+             * centerComponent: title => variable according to screen router
+             */
 			<Header
 				leftComponent={{ icon: 'search', color: '#000' }}
 				centerComponent={{ text: 'COODIE', style: { color: '#000', fontWeight: 'bold' } }}
@@ -20,18 +26,10 @@ export default class TopNavigator extends Component <{}> {
 				containerStyle={{
 					shadowColor: '#000',
                     shadowOffset: { width: 1, height: 1 },
-                    shadowOpacity: 0.1,
+                    shadowOpacity: 0.2,
                     shadowRadius: 3,
 				}}
 			/>
         );
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-	    flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-});

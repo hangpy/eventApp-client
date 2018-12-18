@@ -1,6 +1,5 @@
 /** 
- * HomeScreen.js
- * @author 
+ * @author hangpy
  * created on 2018-12-16
  */
 
