@@ -1,25 +1,25 @@
 /** 
- * FavoriteScreen.js
- * @author 
- * created on 2018-12-16
+ * CouponTag.js
+ * @author hangpy
+ * created on 2018-12-20
  */
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
 
-export default class FavoriteScreen extends Component <{}> {
+export default class CouponTag extends Component <{}> {
 		
 	render() {
 		return (
 		    <View style={styles.container}>
-		        <Text>Favorite Screen</Text>
+		        
 		    </View>
         );
 	}
 }
 
 const styles = StyleSheet.create({
-    container: {
+	container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'

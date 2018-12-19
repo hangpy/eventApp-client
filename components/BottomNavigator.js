@@ -9,7 +9,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from "./HomeScreen/HomeScreen";
-import FavoriteScreen from "./FavoriteScreen/FavoriteScreen";
+import CouponBoxScreen from "./FavoriteScreen/CouponBoxScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
 import SettingScreen from "./SerttingScreen/SettingScreen";
 
@@ -28,10 +28,10 @@ export default createBottomTabNavigator({
         }
     },
     Favorite: {
-        screen: FavoriteScreen,
+        screen: CouponBoxScreen,
         navigationOptions: {
-            tabBarLabel: '즐겨찾기',
-            tabBarIcon: ({tintColor}) => (<Icon name='ios-bookmark' color={tintColor} size={24}/>)
+            tabBarLabel: '쿠폰함',
+            tabBarIcon: ({tintColor}) => (<Icon name='ios-cube' color={tintColor} size={24}/>)
         }
     },
     Profile: {

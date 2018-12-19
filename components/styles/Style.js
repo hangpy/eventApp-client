@@ -75,9 +75,13 @@ export const makeMargin = (widthRatio) => StyleSheet.create({
         marginBottom: DeviceScreen.height * 0.02,
     },
     marginVertical: {
-        marginTop: DeviceScreen.height * 0.02,
+        marginTop: DeviceScreen.height * 0.01,
         marginRight: DeviceScreen.width * (1-widthRatio)/2,
         marginLeft: DeviceScreen.width * (1-widthRatio)/2,
-        marginBottom: DeviceScreen.height * 0.02,
+        marginBottom: DeviceScreen.height * 0.01,
     }
+});
+
+export const makeWidth = (widthRatio = 0.92) => ({
+    width: DeviceScreen.width*widthRatio
 });
