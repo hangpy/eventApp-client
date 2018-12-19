@@ -53,6 +53,10 @@ export const makeSquareRatio = (widthRatio) => StyleSheet.create({
         width: DeviceScreen.width * widthRatio,
         height: DeviceScreen.width * widthRatio * 0.75
     },
+    fiveToFour: {
+        width: DeviceScreen.width * widthRatio,
+        height: DeviceScreen.width * widthRatio * 0.8
+    },
     sixteenToNine: {
         width: DeviceScreen.width * widthRatio,
         height: DeviceScreen.width * widthRatio * 0.56
