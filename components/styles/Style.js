@@ -44,7 +44,7 @@ export const makeRadius = (size=10, topLeft=true, topRight=true, bottomRight=tru
 };
 
 /* parameter is for to be standard for other length in case for any device platform */
-export const makeSquareRatio = (widthRatio) => StyleSheet.create({
+export const makeSquareRatio = (widthRatio = 0.92) => StyleSheet.create({
     oneToOne: {
         width: DeviceScreen.width * widthRatio,
         height: DeviceScreen.width * widthRatio
@@ -67,7 +67,7 @@ export const makeSquareRatio = (widthRatio) => StyleSheet.create({
     }
 });
 
-export const makeMargin = (widthRatio) => StyleSheet.create({
+export const makeMargin = (widthRatio = 0.92) => StyleSheet.create({
     marginShowingNext: {
         marginTop: DeviceScreen.height * 0.02,
         marginRight: DeviceScreen.width * (1-widthRatio)/8,
