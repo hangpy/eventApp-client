@@ -20,13 +20,13 @@ export default class CouponsCard extends Component <{}> {
         this.setState({
             coupons: [
                 {key: 1, title: '플라잉볼', description: '런칭 기념 플라잉볼 10% 할인 쿠폰',
-                    image: '/Users/ihangbok/dev/project/eventApp/client/image/flyingball.jpg', discount: '10% 추가할인', deadline: ''},
+                    image: '/Users/hang/Desktop/dev/eventApp/eventapp-client/image/flyingball.jpg', discount: '10% 추가할인', deadline: ''},
                 {key: 2, title: '새우꺾기', description: '과기대 학생 종강 이벤트',
-                    image: '/Users/ihangbok/dev/project/eventApp/client/image/shrimp.jpg', discount: '10% 추가할인', deadline: ''},
+                    image: '/Users/hang/Desktop/dev/eventApp/eventapp-client/image/shrimp.jpg', discount: '10% 추가할인', deadline: ''},
                 {key: 3, title: '열화철판', description: '과기대 상권 살리기 이벤트',
-                    image: '/Users/ihangbok/dev/project/eventApp/client/image/fire.jpg', discount: '20% 할인', deadline: ''},
+                    image: '/Users/hang/Desktop/dev/eventApp/eventapp-client/image/fire.jpg', discount: '20% 할인', deadline: ''},
                 {key: 4, title: '신가쯔', description: '2인분 주문 시 돈가스 증정 이벤트',
-                    image: '/Users/ihangbok/dev/project/eventApp/client/image/pork.jpg', discount: '돈가스 증정', deadline: ''},
+                    image: '/Users/hang/Desktop/dev/eventApp/eventapp-client/image/pork.jpg', discount: '돈가스 증정', deadline: ''},
             ]
         })
     }
