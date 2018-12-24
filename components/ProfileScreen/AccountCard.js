@@ -24,7 +24,7 @@ export default class AccountCard extends Component <{}> {
 					<View>
 						<View style={[styles.profileImage]}>
 							{/* To be fetch */}
-							<Image source={{uri: '/Users/ihangbok/dev/project/eventApp/client/components/styles/profile_ex.jpeg'}}
+							<Image source={require('../../image/profile_ex.jpeg')}
 								   style={{width: '100%', height: '100%'}}/>
 						</View>
                         <View style={[styles.camera, Shadowing]}>
