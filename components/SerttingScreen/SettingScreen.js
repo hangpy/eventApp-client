@@ -5,23 +5,94 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
+import { Platform, View, StyleSheet, Text, Image, AppRegistry, Alert } from 'react-native';
+import SettingsList from 'react-native-settings-list';
 
 export default class SettingScreen extends Component <{}> {
-		
-	render() {
-		return (
-		    <View style={styles.container}>
-		        <Text>Setting Screen</Text>
-		    </View>
+
+    constructor(){
+        super();
+        this.onValueChange = this.onValueChange.bind(this);
+        this.state = {switchValue: false};
+    }
+    render() {
+        let bgColor = '#EFEFF4';
+        return (
+            <View style={{backgroundColor:bgColor,flex:1}}>
+                <View style={{backgroundColor:bgColor,flex:1}}>
+                    <SettingsList borderColor='#c8c7cc' defaultItemSize={50}>
+                        <SettingsList.Header headerText={'서비스 정보'} headerStyle={styles.headerStyle}/>
+                        <SettingsList.Item
+                            title='쿠디에 대해'
+                            titleStyle={styles.titleStyle}
+                            onPress={() => Alert.alert('Route to Wifi Page')}
+                        />
+                        <SettingsList.Item
+                            title='이용 약관'
+                            titleStyle={styles.titleStyle}
+                            onPress={() => Alert.alert('Route to Blutooth Page')}
+                        />
+                        <SettingsList.Item
+                            title='개인정보 보호 정책'
+                            titleStyle={styles.titleStyle}
+                            onPress={() => Alert.alert('Route To Cellular Page')}
+                        />
+                        <SettingsList.Item
+                            title='제휴 문의'
+                            titleStyle={styles.titleStyle}
+                            onPress={() => Alert.alert('Route To Hotspot Page')}
+                        />
+                        <SettingsList.Header headerText={'부가 기능 설정'} headerStyle={styles.headerStyle}/>
+                        <SettingsList.Item
+                            hasSwitch={true}
+                            switchState={this.state.switchValue}
+                            switchOnValueChange={this.onValueChange}
+                            hasNavArrow={false}
+                            title='이벤트 정보 푸쉬 허용'
+                            titleStyle={styles.titleStyle}
+                        />
+                        <SettingsList.Item
+                            title='저장공간 관리'
+                            titleInfo='캐시 삭제'
+                            titleStyle={styles.titleStyle}
+                            titleInfoStyle={styles.titleInfoStyle}
+                            onPress={() => Alert.alert('Route To Control Center Page')}
+                        />
+                        <SettingsList.Header headerText={'서비스 공유'} headerStyle={styles.headerStyle}/>
+                        <SettingsList.Item
+                            title='카카오톡으로 앱 추천'
+                            titleStyle={styles.titleStyle}
+                            onPress={() => Alert.alert('Route To General Page')}
+                        />
+                        <SettingsList.Header headerText={'버전 정보'} headerStyle={styles.headerStyle}/>
+                        <SettingsList.Item
+                            title='Ver 1.0.0'
+                            titleStyle={styles.titleStyle}
+                            onPress={() => Alert.alert('Route To General Page')}
+                        />
+                    </SettingsList>
+                </View>
+            </View>
         );
-	}
+    }
+    onValueChange(value){
+        this.setState({switchValue: value});
+    }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        flexDirection: 'column',
+        backgroundColor: '#EFEFF4'
     },
+    titleStyle: {
+        fontSize: 15,
+        color: '#2f2f2f'
+    },
+    headerStyle: {
+        marginTop:15,
+        marginLeft: 15,
+        color: '#4b4b4b'
+    }
 });

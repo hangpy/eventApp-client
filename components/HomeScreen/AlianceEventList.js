@@ -5,7 +5,19 @@
  */
 
 import React, { Component } from 'react';
-import {Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView, FlatList, Dimensions} from 'react-native';
+import {
+    Platform,
+    View,
+    StyleSheet,
+    Text,
+    Image,
+    AppRegistry,
+    ScrollView,
+    FlatList,
+    Dimensions,
+    TouchableOpacity,
+    Alert
+} from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
 import { makeSquareRatio, makeSquareMargin} from '../styles/Style'
 import AllianceEventCard from "./AllianceEventCard";
@@ -25,7 +37,7 @@ export default class AllianceEventList extends Component <{}> {
             ],
         });
     }
-		
+
 	render() {
 		return (
             /**
@@ -50,9 +62,11 @@ export default class AllianceEventList extends Component <{}> {
                       renderItem={
                           // must embrace parameter with {, }
                           ({item}) => (
-                              <AllianceEventCard
-                                  item={item}
-                              />
+                              <TouchableOpacity onPress={() => Alert.alert('Route to detailed Page')}>
+                                  <AllianceEventCard
+                                      item={item}
+                                  />
+                              </TouchableOpacity>
                           )
                       }
                 />
