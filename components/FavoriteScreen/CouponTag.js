@@ -21,7 +21,7 @@ export default class CouponTag extends Component <{}> {
 		    <View style={[styles.container,
 				makeRadius()]}>
 				<View style={[styles.imageBox]}>
-					<Image style={styles.eventImage} source={{uri: this.props.couponData.image}}/>
+					<Image style={styles.eventImage} source={this.props.couponData.image}/>
 				</View>
 				<View style={styles.textBox}>
 					<View style={[{flex: 1}, styles.textEachBox]}>
