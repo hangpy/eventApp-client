@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
 import { Header } from "react-native-elements";
 
-export default class TopNavigator extends Component <{}> {
+export default class TopNavigator extends Component<{}> {
 
 	render() {
 		return (
@@ -25,11 +25,11 @@ export default class TopNavigator extends Component <{}> {
 				backgroundColor={'#fff'}
 				containerStyle={{
 					shadowColor: '#000',
-                    shadowOffset: { width: 1, height: 1 },
-                    shadowOpacity: 0.2,
-                    shadowRadius: 3,
+					shadowOffset: { width: 1, height: 1 },
+					shadowOpacity: 0.2,
+					shadowRadius: 3,
 				}}
 			/>
-        );
+		);
 	}
 }
