@@ -8,8 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import BottomNavigator from "./components/BottomNavigator";
-import TopNavigator from "./components/TopNavigator";
+import BottomNavigator from "./src/components/BottomNavigator";
+import TopNavigator from "./src/components/TopNavigator";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',

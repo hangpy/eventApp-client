@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
-import {DeviceScreen, makeRadius, makeSquareRatio} from "../styles/Style";
+import {DeviceScreen, makeRadius, makeSquareRatio} from "../../styles/Style";
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default class CouponTag extends Component <{}> {

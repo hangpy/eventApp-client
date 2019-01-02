@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, FlatList, ScrollView, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { makeSquareRatio, makeMargin} from '../styles/Style';
+import { makeSquareRatio, makeMargin} from '../../styles/Style';
 
 export default class HotEventBanner extends Component <{}> {
 

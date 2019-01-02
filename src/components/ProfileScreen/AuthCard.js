@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
-import {DeviceScreen, makeMargin, makeRadius, makeSquareRatio, Shadowing} from "../styles/Style";
+import {DeviceScreen, makeMargin, makeRadius, makeSquareRatio, Shadowing} from "../../styles/Style";
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default class AuthCard extends Component <{}> {

@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView} from 'react-native';
-import { makeSquareRatio, makeRadius, makeMargin } from "../styles/Style";
+import { makeSquareRatio, makeRadius, makeMargin } from "../../styles/Style";
 import StatusCard from "./StatusCard";
 import CouponsCard from "./CouponsCard";
 

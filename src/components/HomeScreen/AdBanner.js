@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { ScrollView, FlatList, View, StyleSheet, Text, Dimensions } from 'react-native';
-import { makeSquareRatio, makeMargin, makeRadius } from '../styles/Style';
+import { makeSquareRatio, makeMargin, makeRadius } from '../../styles/Style';
 
 export default class AdBanner extends Component <{}> {
 

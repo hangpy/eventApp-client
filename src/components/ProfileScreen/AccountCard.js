@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, ImageBackground, Image, AppRegistry } from 'react-native';
-import { makeSquareRatio, makeMargin, Shadowing, makeRadius, DeviceScreen } from "../styles/Style";
+import { makeSquareRatio, makeMargin, Shadowing, makeRadius, DeviceScreen } from "../../styles/Style";
 import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class AccountCard extends Component <{}> {

@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
-import { makeMargin, makeSquareRatio, makeRadius, DeviceScreen } from "../styles/Style";
+import { makeMargin, makeSquareRatio, makeRadius, DeviceScreen } from "../../styles/Style";
 
 export default class AllianceEventCard extends Component <{}> {
 

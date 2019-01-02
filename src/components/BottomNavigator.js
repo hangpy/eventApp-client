@@ -9,7 +9,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from "./HomeScreen/HomeScreen";
-import CouponBoxScreen from "./FavoriteScreen/CouponBoxScreen";
+import CouponBoxScreen from "./CouponBoxScreen/CouponBoxScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
 import SettingScreen from "./SerttingScreen/SettingScreen";
 
@@ -27,7 +27,7 @@ export default createBottomTabNavigator({
             tabBarIcon: ({tintColor}) => (<Icon name='ios-home' color={tintColor} size={24}/>)
         }
     },
-    Favorite: {
+    CouponBox: {
         screen: CouponBoxScreen,
         navigationOptions: {
             tabBarLabel: '쿠폰함',

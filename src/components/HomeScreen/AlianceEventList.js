@@ -19,7 +19,7 @@ import {
     Alert
 } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
-import { makeSquareRatio, makeSquareMargin} from '../styles/Style'
+import { makeSquareRatio, makeSquareMargin} from '../../styles/Style'
 import AllianceEventCard from "./AllianceEventCard";
 
 export default class AllianceEventList extends Component <{}> {
