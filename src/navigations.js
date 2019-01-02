@@ -22,11 +22,9 @@ export const goToApp = () => Navigation.setRoot({
                             bottomTab: {
                                 fontSize: 12,
                                 text: '홈',
-                                icon: require('./image/ios-home.png'),
+                                icon: require('./image/ios-home-25.png'),
                                 selectedIconColor: '#ff2d55',
                                 selectedTextColor: '#ff2d55',
-
-                                // icon: <Icon name='ios-home' size={24}/>
                             },
                         }
                     }
@@ -44,10 +42,9 @@ export const goToApp = () => Navigation.setRoot({
                             bottomTab: {
                                 fontSize: 12,
                                 text: '쿠폰함',
-                                icon: require('./image/ios-cube.png'),
+                                icon: require('./image/ios-cube-25.png'),
                                 selectedIconColor: '#ff2d55',
                                 selectedTextColor: '#ff2d55',
-                                // icon: <Icon name='ios-cube' size={24}/>
                             }
                         }
                     }
@@ -65,10 +62,9 @@ export const goToApp = () => Navigation.setRoot({
                             bottomTab: {
                                 fontSize: 12,
                                 text: '마이페이지',
-                                icon: require('./image/ios-user.png'),
+                                icon: require('./image/ios-user-25.png'),
                                 selectedIconColor: '#ff2d55',
                                 selectedTextColor: '#ff2d55',
-                                // icon: <Icon name='ios-person' size={24}/>
                             }
                         }
                     }
@@ -86,10 +82,9 @@ export const goToApp = () => Navigation.setRoot({
                             bottomTab: {
                                 fontSize: 12,
                                 text: '설정',
-                                icon: require('./image/ios-setting.png'),
+                                icon: require('./image/ios-settings-25.png'),
                                 selectedIconColor: '#ff2d55',
-                                selectedTextColor: '#ff2d55',
-                                // icon: <Icon name='ios-settings' size={24}/>
+                                selectedTextColor: '#ff2d55'
                             }
                         }
                     }
