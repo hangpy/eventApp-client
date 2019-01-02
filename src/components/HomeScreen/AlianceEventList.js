@@ -20,6 +20,7 @@ import {
 } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
 import { makeSquareRatio, makeSquareMargin} from '../../styles/Style'
+import { Navigation } from "react-native-navigation";
 import AllianceEventCard from "./AllianceEventCard";
 
 export default class AllianceEventList extends Component <{}> {
@@ -62,11 +63,10 @@ export default class AllianceEventList extends Component <{}> {
                       renderItem={
                           // must embrace parameter with {, }
                           ({item}) => (
-                              <TouchableOpacity onPress={() => Alert.alert('Route to detailed Page')}>
-                                  <AllianceEventCard
-                                      item={item}
-                                  />
-                              </TouchableOpacity>
+                              <AllianceEventCard
+                                  item={item}
+                                  componentId={this.props.componentId}
+                              />
                           )
                       }
                 />

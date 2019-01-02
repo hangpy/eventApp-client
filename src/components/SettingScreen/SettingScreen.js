@@ -15,6 +15,20 @@ export default class SettingScreen extends Component <{}> {
         this.onValueChange = this.onValueChange.bind(this);
         this.state = {switchValue: false};
     }
+
+    static options(passProps) {
+        return {
+            topBar: {
+                title: {
+                    text: '설정',
+                    fontWeight: 'bold'
+                },
+                visible: true,
+                animate: true,
+            }
+        };
+    }
+
     render() {
         let bgColor = '#EFEFF4';
         return (

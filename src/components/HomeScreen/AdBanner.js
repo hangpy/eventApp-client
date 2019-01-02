@@ -5,8 +5,9 @@
  */
 
 import React, { Component } from 'react';
-import { ScrollView, FlatList, View, StyleSheet, Text, Dimensions } from 'react-native';
+import { ScrollView, FlatList, View, StyleSheet, Text, Dimensions, Alert, TouchableOpacity } from 'react-native';
 import { makeSquareRatio, makeMargin, makeRadius } from '../../styles/Style';
+import {Navigation} from "react-native-navigation";
 
 export default class AdBanner extends Component <{}> {
 
@@ -41,13 +42,21 @@ export default class AdBanner extends Component <{}> {
                     data={this.state.banners}
                     renderItem={
                         ({item}) => (
-                            <View style={[
-                                styles.bannerContainer,
-                                makeSquareRatio(0.88).threeToOne,
-                                makeMargin(0.88).marginShowingNext,
-                                makeRadius()]}>
-                                <Text style={styles.bannerText}>{item.key}</Text>
-                            </View>
+                            <TouchableOpacity onPress={() => {
+                                Navigation.push(this.props.componentId, {
+                                    component: {
+                                        name: 'AllianceDetailPage'
+                                    }
+                                })}}
+                            >
+                                <View style={[
+                                    styles.bannerContainer,
+                                    makeSquareRatio(0.88).threeToOne,
+                                    makeMargin(0.88).marginShowingNext,
+                                    makeRadius()]}>
+                                    <Text style={styles.bannerText}>{item.key}</Text>
+                                </View>
+                            </TouchableOpacity>
                         )
                     }
                 />

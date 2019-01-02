@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from "./HomeScreen/HomeScreen";
 import CouponBoxScreen from "./CouponBoxScreen/CouponBoxScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
-import SettingScreen from "./SerttingScreen/SettingScreen";
+import SettingScreen from "./SettingScreen/SettingScreen";
 
 export default createBottomTabNavigator({
     /**

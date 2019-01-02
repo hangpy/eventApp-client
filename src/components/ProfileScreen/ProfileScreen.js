@@ -11,6 +11,19 @@ import AuthCard from "./AuthCard";
 import HistoryCard from "./HistoryCard";
 
 export default class ProfileScreen extends Component <{}> {
+
+    static options(passProps) {
+        return {
+            topBar: {
+                title: {
+                    text: '마이페이지',
+                    fontWeight: 'bold'
+                },
+                visible: true,
+                animate: true,
+            }
+        };
+    }
 		
 	render() {
 		return (

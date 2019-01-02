@@ -11,6 +11,20 @@ import StatusCard from "./StatusCard";
 import CouponsCard from "./CouponsCard";
 
 export default class CouponBoxScreen extends Component <{}> {
+
+    static options(passProps) {
+        return {
+            topBar: {
+                title: {
+                    text: '쿠폰함',
+                    fontWeight: 'bold'
+                },
+                visible: true,
+                animate: true,
+                hideOnScroll: true,
+            }
+        };
+    }
 		
 	render() {
 		return (
