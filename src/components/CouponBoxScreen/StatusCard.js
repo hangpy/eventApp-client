@@ -7,6 +7,8 @@
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
 import {makeMargin, makeRadius, makeSquareRatio, Shadowing} from "../../styles/Style";
+// import enableFontPatch from '../../styles/enableFontPatch';
+// enableFontPatch();
 
 export default class StatusCard extends Component <{}> {
 
@@ -41,17 +43,17 @@ export default class StatusCard extends Component <{}> {
                 <View style={[styles.statusBox, {flex: 4}]}>
                     <View style={[styles.statusEachBox]}>
                         <Text style={styles.statusNumber}>{this.state.status.nCoupons}</Text>
-                        <Text style={styles.statusDescription}>담은 쿠폰 수</Text>
+                        <Text style={styles.statusDescription}> 담은 쿠폰 수 </Text>
                     </View>
                     <View style={styles.border}/>
                     <View style={[styles.statusEachBox]}>
                         <Text style={styles.statusNumber}>{this.state.status.nExpireToday}</Text>
-                        <Text style={styles.statusDescription}>오늘 마감</Text>
+                        <Text style={styles.statusDescription}> 오늘 마감 </Text>
                     </View>
                     <View style={styles.border}/>
                     <View style={[styles.statusEachBox]}>
                         <Text style={styles.statusNumber}>{this.state.status.nAlliances}</Text>
-                        <Text style={styles.statusDescription}>쩨휴 찜</Text>
+                        <Text style={styles.statusDescription}> 쩨휴 찜 </Text>
                     </View>
                 </View>
             </View>
@@ -90,7 +92,8 @@ const styles = StyleSheet.create({
     statusDescription: {
         flex: 1,
         fontSize: 13,
-        color: '#8b8b8b'
+        color: '#8b8b8b',
+
     },
     border: {
 	    height: '90%',

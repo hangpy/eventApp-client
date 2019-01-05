@@ -17,6 +17,7 @@ export default class CouponTag extends Component <{}> {
 
 
 	render() {
+
 		return (
 		    <View style={[styles.container,
 				makeRadius()]}>

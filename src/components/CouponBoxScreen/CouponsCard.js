@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, FlatList, Image, AppRegistry } from 'react-native';
-import {makeMargin, makeRadius, makeWidth} from "../../styles/Style";
+import {makeMargin, makeRadius, makeWidth, DeviceScreen} from "../../styles/Style";
 import CouponTag from "./CouponTag";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -20,7 +20,7 @@ export default class CouponsCard extends Component <{}> {
         this.setState({
             coupons: [
                 {key: 1, title: '플라잉볼', description: '런칭 기념 플라잉볼 10% 할인 쿠폰',
-                    image: require('../../image/flyingball.jpg'), discount: '10% 추가할인', deadline: ''},
+                    image: require('../../image/flyingball.jpg'), discount: '10% 할인', deadline: ''},
                 {key: 2, title: '새우꺾기', description: '과기대 학생 종강 이벤트',
                     image: require('../../image/shrimp.jpg'), discount: '10% 추가할인', deadline: ''},
                 {key: 3, title: '열화철판', description: '과기대 상권 살리기 이벤트',
@@ -32,13 +32,16 @@ export default class CouponsCard extends Component <{}> {
     }
 
     render() {
+
+        const fontSize = DeviceScreen.width * 0.1;
+
 		return (
             <View style={[styles.container,
                 makeMargin(0.92).marginVertical,
                 makeRadius(),
                 makeWidth()]}>
                 <View style={styles.titleBox}>
-                    <Text style={{color: '#323232', fontSize: 16}}>쿠폰함</Text>
+                    <Text style={{color: '#323232', fontSize: fontSize}}>쿠폰함</Text>
                 </View>
                 <View style={styles.listTextBox}>
                     <Text style={styles.listText}>받은 쿠폰 리스트</Text>

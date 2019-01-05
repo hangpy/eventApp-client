@@ -19,6 +19,10 @@ export const Shadowing = {
 };
 
 
+/**
+ * Function for defining each corner's radius
+ * param size: the size to be adapted to component
+ */
 export const makeRadius = (size=10, topLeft=true, topRight=true, bottomRight=true, bottomLeft=true) => {
 
     if(typeof size !== 'number') {
