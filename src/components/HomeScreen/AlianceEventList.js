@@ -19,7 +19,7 @@ import {
     Alert
 } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
-import { makeSquareRatio, makeSquareMargin} from '../../styles/Style'
+import {makeSquareRatio, makeSquareMargin, isAndroid, chooseBetween} from '../../styles/Style'
 import { Navigation } from "react-native-navigation";
 import AllianceEventCard from "./AllianceEventCard";
 
@@ -79,7 +79,7 @@ const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     section: {
-        marginTop: screenHeight * 0.02
+        marginTop: screenHeight * 0.02,
     },
     rowDirection: {
         flex: 1,

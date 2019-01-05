@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, FlatList, Image, AppRegistry } from 'react-native';
-import {makeMargin, makeRadius, makeWidth, DeviceScreen} from "../../styles/Style";
+import {makeMargin, makeRadius, makeWidth, DeviceScreen, chooseBetween} from "../../styles/Style";
 import CouponTag from "./CouponTag";
 import Icon from "react-native-vector-icons/Ionicons";
 

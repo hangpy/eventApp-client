@@ -9,6 +9,7 @@ import {Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView} from '
 import AccountCard from "./AccountCard";
 import AuthCard from "./AuthCard";
 import HistoryCard from "./HistoryCard";
+import {isAndroid, backgroundColor} from "../../styles/Style";
 
 export default class ProfileScreen extends Component <{}> {
 
@@ -29,10 +30,12 @@ export default class ProfileScreen extends Component <{}> {
 		return (
             <ScrollView
                 showsVerticalScrollIndicator={false}
-                style={styles.container}>
-                <AccountCard/>
-                <AuthCard/>
-                <HistoryCard/>
+                style={{backgroundColor: backgroundColor}}>
+                <View style={styles.container}>
+                    <AccountCard/>
+                    <AuthCard/>
+                    <HistoryCard/>
+                </View>
 		    </ScrollView>
         );
 	}
@@ -40,6 +43,8 @@ export default class ProfileScreen extends Component <{}> {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#EFEFF4'
+        backgroundColor: '#EFEFF4',
+        paddingTop: isAndroid(Platform.OS) * 60,
+        paddingBottom: 20
     },
 });

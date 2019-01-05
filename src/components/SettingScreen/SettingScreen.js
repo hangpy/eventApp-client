@@ -5,8 +5,9 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Image, AppRegistry, Alert } from 'react-native';
+import { Platform, View, StyleSheet, Text, Image, AppRegistry, Alert, ScrollView } from 'react-native';
 import SettingsList from 'react-native-settings-list';
+import {chooseBetween, isAndroid, backgroundColor} from "../../styles/Style";
 
 export default class SettingScreen extends Component <{}> {
 
@@ -30,10 +31,9 @@ export default class SettingScreen extends Component <{}> {
     }
 
     render() {
-        let bgColor = '#EFEFF4';
         return (
-            <View style={{backgroundColor:bgColor,flex:1}}>
-                <View style={{backgroundColor:bgColor,flex:1}}>
+            <ScrollView style={[styles.container,  {backgroundColor:backgroundColor,flex:1, marginTop: 0}]} showsVerticalScrollIndicator={false}>
+                <View style={{paddingBottom: chooseBetween(100, 20, Platform.OS)}}>
                     <SettingsList borderColor='#c8c7cc' defaultItemSize={50}>
                         <SettingsList.Header headerText={'서비스 정보'} headerStyle={styles.headerStyle}/>
                         <SettingsList.Item
@@ -86,7 +86,7 @@ export default class SettingScreen extends Component <{}> {
                         />
                     </SettingsList>
                 </View>
-            </View>
+            </ScrollView>
         );
     }
     onValueChange(value){
@@ -96,16 +96,15 @@ export default class SettingScreen extends Component <{}> {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#EFEFF4'
+        paddingTop: isAndroid(Platform.OS)*50,
     },
     titleStyle: {
         fontSize: 15,
         color: '#2f2f2f'
     },
     headerStyle: {
-        marginTop:15,
+        marginTop: 0,
+        paddingTop:15,
         marginLeft: 15,
         color: '#4b4b4b'
     }

@@ -24,6 +24,9 @@ export default class AllianceEventCard extends Component <{}> {
                             name: 'AllianceDetailPage',
                             passProps: {
                                 key: this.props.item.key
+                            },
+                            options: {
+
                             }
                         }
                     })

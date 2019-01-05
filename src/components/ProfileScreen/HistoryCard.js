@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, FlatList, AppRegistry } from 'react-native';
-import {makeMargin, makeRadius, makeSquareRatio, Shadowing} from "../../styles/Style";
+import {chooseBetween, makeMargin, makeRadius, makeSquareRatio, Shadowing} from "../../styles/Style";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class HistoryCard extends Component <{}> {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-		backgroundColor: '#fff'
+		backgroundColor: '#fff',
     },
     titleBox: {
 	    justifyContent: 'center',

@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, ScrollView} from 'react-native';
-import { makeSquareRatio, makeRadius, makeMargin } from "../../styles/Style";
+import {makeSquareRatio, makeRadius, makeMargin, isAndroid, backgroundColor} from "../../styles/Style";
 import StatusCard from "./StatusCard";
 import CouponsCard from "./CouponsCard";
 
@@ -19,9 +19,6 @@ export default class CouponBoxScreen extends Component <{}> {
                     text: '쿠폰함',
                     fontWeight: 'bold'
                 },
-                visible: true,
-                animate: true,
-                hideOnScroll: true,
             }
         };
     }
@@ -30,9 +27,11 @@ export default class CouponBoxScreen extends Component <{}> {
 		return (
             <ScrollView
                 showsVerticalScrollIndicator={false}
-                style={styles.container}>
-                <StatusCard/>
-                <CouponsCard/>
+                style={{backgroundColor: backgroundColor}}>
+                <View style={styles.container}>
+                    <StatusCard/>
+                    <CouponsCard/>
+                </View>
             </ScrollView>
         );
 	}
@@ -40,6 +39,7 @@ export default class CouponBoxScreen extends Component <{}> {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#EFEFF4'
+        paddingTop: isAndroid(Platform.OS)*60,
+        paddingBottom: isAndroid(Platform.OS)*20
     },
 });

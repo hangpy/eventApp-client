@@ -12,4 +12,8 @@ export const registerScreens = () => {
     Navigation.registerComponent( 'ProfileScreen', () => require('./components/ProfileScreen/ProfileScreen').default);
     Navigation.registerComponent( 'SettingScreen', () => require('./components/SettingScreen/SettingScreen').default);
     Navigation.registerComponent('AllianceDetailPage', () => require('./components/HomeScreen/AllianceDetailPage').default);
+    Navigation.registerComponent('TitleLogo', () => require('./components/HomeScreen/TitleLogo').default);
+    Navigation.registerComponent('SearchButton', () => require('./components/HomeScreen/SearchButton').default);
+    Navigation.registerComponent('MarkerButton', () => require('./components/HomeScreen/MarkerButton').default);
+
 };

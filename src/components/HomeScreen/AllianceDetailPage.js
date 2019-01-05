@@ -10,21 +10,25 @@ import {Navigation} from "react-native-navigation";
 
 export default class AllianceDetailPage extends Component <{}> {
 
+	state = {
+		key: null
+	};
+
 	static options(passProps) {
+		AllianceDetailPage._passProps = passProps;
+
 		return {
+			statusBar: {
+				drawBehind: true,
+				visible: false
+			},
 			topBar: {
-				title: {
-					text: passProps.key
-				},
-				backButton: {
-					title: 'Back',
-					showTitle: false
-				},
-				background: {
-					color: 'black',
-					translucent: true,
-					blur: true
-				}
+				visible: false,
+				drawBehind: true,
+				animate: true,
+			},
+			bottomTabs: {
+				visible: false
 			}
 		}
 	}
@@ -32,10 +36,10 @@ export default class AllianceDetailPage extends Component <{}> {
 	render() {
 		return (
 		    <View style={styles.container}>
-		        <Text>This is page for detail of {this.props.title}</Text>
+		        <Text>This is page for detail of {AllianceDetailPage._passProps.key}</Text>
 				<Button
 					onPress={() => Navigation.pop(this.props.componentId)}
-					title='Go Back'
+					title='Go Back!'
 				/>
 		    </View>
         );

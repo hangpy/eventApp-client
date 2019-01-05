@@ -8,6 +8,7 @@ export const goToApp = () => Navigation.setRoot({
         bottomTabs: {
             id: 'BottomTabsId',
             animate: true,
+            drawBehind: false,
             children: [
                 {
                     stack: {
@@ -20,7 +21,7 @@ export const goToApp = () => Navigation.setRoot({
                         ],
                         options: {
                             bottomTab: {
-                                fontSize: 12,
+                                fontSize: 10,
                                 text: '홈',
                                 icon: require('./image/ios-home-25.png'),
                                 selectedIconColor: '#ff2d55',
@@ -40,7 +41,7 @@ export const goToApp = () => Navigation.setRoot({
                         ],
                         options: {
                             bottomTab: {
-                                fontSize: 12,
+                                fontSize: 10,
                                 text: '쿠폰함',
                                 icon: require('./image/ios-cube-25.png'),
                                 selectedIconColor: '#ff2d55',
@@ -60,7 +61,7 @@ export const goToApp = () => Navigation.setRoot({
                         ],
                         options: {
                             bottomTab: {
-                                fontSize: 12,
+                                fontSize: 10,
                                 text: '마이페이지',
                                 icon: require('./image/ios-user-25.png'),
                                 selectedIconColor: '#ff2d55',
@@ -80,7 +81,7 @@ export const goToApp = () => Navigation.setRoot({
                         ],
                         options: {
                             bottomTab: {
-                                fontSize: 12,
+                                fontSize: 10,
                                 text: '설정',
                                 icon: require('./image/ios-settings-25.png'),
                                 selectedIconColor: '#ff2d55',

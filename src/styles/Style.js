@@ -18,6 +18,14 @@ export const Shadowing = {
     shadowRadius: 7,
 };
 
+/**
+ * according to device platform, differently choose each props.
+ */
+export const isAndroid = (platform) => (platform === 'android' ? 1 : 0 );
+export const isiOS = (platform) => (platform === 'iOS'  ? 1 : 0);
+export const chooseBetween = (android, ios, platform) => (platform === 'android'? android : ios);
+
+export const backgroundColor = '#EFEFF4';
 
 /**
  * Function for defining each corner's radius
