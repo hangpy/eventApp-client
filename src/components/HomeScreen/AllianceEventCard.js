@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {Platform, View, StyleSheet, Text, Image, AppRegistry, TouchableOpacity, Alert} from 'react-native';
+import {Platform, View, StyleSheet, Text, Image, AppRegistry, TouchableOpacity, Alert, ImageBackground} from 'react-native';
 import { makeMargin, makeSquareRatio, makeRadius, DeviceScreen } from "../../styles/Style";
 import { Navigation } from "react-native-navigation";
 
@@ -35,12 +35,24 @@ export default class AllianceEventCard extends Component <{}> {
                 <View style={[styles.cardContainer,
                     makeSquareRatio(0.92).sixteenToNine,
                     makeMargin(0.92).marginVertical]}>
-                    <View style={[
-                        styles.eventImage,
-                        makeRadius(undefined, true, true,false,false)]}>
-                        {/* Image part to be fetch */}
-                        <Text style={{color: '#fff'}}>{this.props.item.key} Image</Text>
-                    </View>
+                    <ImageBackground source={this.props.item.imageSource}
+                                     style={[styles.eventImage, makeRadius(undefined, true, true,false,false)]}
+                                     imageStyle={{resizeMode: 'cover'}}>
+                        <View style={{backgroundColor: 'rgba(0,0,0,0.4)', flex: 1}} >
+                            <View style={{flex: 1}}>
+
+                            </View>
+                            <View style={{flex:3}}/>
+                            <View style={{flex:1, flexDirection: 'row'}}>
+                                <View style={{flex:1, justifyContent: 'center', marginLeft: 10}}>
+                                    <Text style={{borderColor: '#fff', borderWidth: 0.8, fontSize: 13, color: '#fff', paddingRight: 10, paddingLeft: 10}}>
+                                        {this.props.item.start}  ~  {this.props.item.end}
+                                    </Text>
+                                </View>
+                                <View style={{flex:1}}/>
+                            </View>
+                        </View>
+                    </ImageBackground>
                     <View style={[
                         styles.eventDescription,
                         makeRadius(undefined, false, false,true,true)]}>
@@ -66,10 +78,10 @@ const styles = StyleSheet.create({
     },
     eventImage: {
 	    flex: 0.7,
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'column',
         width: DeviceScreen.width * 0.92,
-        backgroundColor: '#9ddd99',
+        overflow: 'hidden',
+        // backgroundColor: '#9ddd99',
     },
     eventDescription: {
 	    flex: 0.3,
