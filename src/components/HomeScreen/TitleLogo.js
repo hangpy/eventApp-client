@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     logo: {
         color: '#000',
 	    fontSize: 22,
-        fontWeight: '500'
+        fontFamily: 'NanumSquareRoundB'
     }
 });

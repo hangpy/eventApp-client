@@ -22,6 +22,7 @@ export const goToApp = () => Navigation.setRoot({
                         options: {
                             bottomTab: {
                                 fontSize: 10,
+                                fontFamily: 'NanumSquareRoundR',
                                 text: '홈',
                                 icon: require('./image/ios-home-25.png'),
                                 selectedIconColor: '#ff2d55',
@@ -42,6 +43,7 @@ export const goToApp = () => Navigation.setRoot({
                         options: {
                             bottomTab: {
                                 fontSize: 10,
+                                fontFamily: 'NanumSquareRoundR',
                                 text: '쿠폰함',
                                 icon: require('./image/ios-cube-25.png'),
                                 selectedIconColor: '#ff2d55',
@@ -62,6 +64,7 @@ export const goToApp = () => Navigation.setRoot({
                         options: {
                             bottomTab: {
                                 fontSize: 10,
+                                fontFamily: 'NanumSquareRoundR',
                                 text: '마이페이지',
                                 icon: require('./image/ios-user-25.png'),
                                 selectedIconColor: '#ff2d55',
@@ -82,6 +85,7 @@ export const goToApp = () => Navigation.setRoot({
                         options: {
                             bottomTab: {
                                 fontSize: 10,
+                                fontFamily: 'NanumSquareRoundR',
                                 text: '설정',
                                 icon: require('./image/ios-settings-25.png'),
                                 selectedIconColor: '#ff2d55',

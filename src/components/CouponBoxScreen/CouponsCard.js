@@ -41,7 +41,7 @@ export default class CouponsCard extends Component <{}> {
                 makeRadius(),
                 makeWidth()]}>
                 <View style={styles.titleBox}>
-                    <Text style={{color: '#323232', fontSize: fontSize}}>쿠폰함</Text>
+                    <Text style={{color: '#323232', fontSize: 16}}>쿠폰함</Text>
                 </View>
                 <View style={styles.listTextBox}>
                     <Text style={styles.listText}>받은 쿠폰 리스트</Text>

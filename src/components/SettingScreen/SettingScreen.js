@@ -22,7 +22,7 @@ export default class SettingScreen extends Component <{}> {
             topBar: {
                 title: {
                     text: '설정',
-                    fontWeight: 'bold'
+                    fontFamily: 'NanumSquareRoundB',
                 },
                 visible: true,
                 animate: true,

@@ -24,8 +24,8 @@ export const Shadowing = {
     shadowRadius: 7,
 };
 
-export const getFont = () => {
-
+export const getBoldFont = () => {
+    return {fontFamily: 'NanumSquareRoundB'};
 };
 
 /**

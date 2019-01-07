@@ -17,7 +17,7 @@ export default class CouponBoxScreen extends Component <{}> {
             topBar: {
                 title: {
                     text: '쿠폰함',
-                    fontWeight: 'bold'
+                    fontFamily: 'NanumSquareRoundB',
                 },
             }
         };

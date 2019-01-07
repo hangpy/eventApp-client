@@ -22,6 +22,7 @@ export default class HomeScreen extends Component <{}> {
             topBar: {
                 title: {
                     color: '#000',
+                    fontFamily: 'NanumSquareRoundB',
                     component: {
                         name: 'TitleLogo',
                         alignment: 'center',

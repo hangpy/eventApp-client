@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, TouchableOpacity, Alert, ImageBackground} from 'react-native';
-import {makeMargin, makeSquareRatio, makeRadius, DeviceScreen, chooseBetween} from "../../styles/Style";
+import {makeMargin, makeSquareRatio, makeRadius, DeviceScreen, chooseBetween, getBoldFont} from "../../styles/Style";
 import { Navigation } from "react-native-navigation";
 
 export default class AllianceEventCard extends Component <{}> {
@@ -57,7 +57,7 @@ export default class AllianceEventCard extends Component <{}> {
                         makeRadius(undefined, false, false,true,true)]}>
                         <View style={{flex:1.8, flexDirection: 'column', flexWrap: 'wrap',paddingLeft: 10}}>
                             <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                <Text adjustsFontSizeToFit style={{fontSize: 18, fontWeight: 'bold', color: '#000'}}>
+                                <Text adjustsFontSizeToFit style={[{fontSize: 18, color: '#000'}, getBoldFont()]}>
                                     {this.props.item.title}
                                 </Text>
                                 <View style={{flex:1, marginTop: 3}}>
@@ -78,7 +78,7 @@ export default class AllianceEventCard extends Component <{}> {
                                     {this.props.item.amount}
                                 </Text>
                                 <Text adjustsFontSizeToFit style={{color: '#ff2d55', fontSize: 20, marginTop: 15, marginLeft: 1}}>{this.props.item.unit}</Text>
-                                <Text adjustsFontSizeToFit style={{color: '#000', fontSize: 25, fontWeight: 'bold', marginTop: 15, marginRight: 10}}>{this.props.item.eventType}</Text>
+                                <Text adjustsFontSizeToFit style={[{color: '#000', fontSize: 25, marginTop: 15, marginRight: 10}, getBoldFont()]}>{this.props.item.eventType}</Text>
                             </View>
                             {/*<View style={{flex:1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 20,  marginTop: 15}}>*/}
                                 {/**/}

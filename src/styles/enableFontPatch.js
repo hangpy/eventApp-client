@@ -10,7 +10,7 @@ export default function enableFontPatch() {
 
     const defaultFontFamily = {
         ...Platform.select({
-            android: { fontFamily: 'NanumSquareRoundB'  }
+            android: { fontFamily: 'NanumSquareRoundR'  }
         })
     };
 
@@ -19,8 +19,8 @@ export default function enableFontPatch() {
         const origin = oldRender.call(this, ...args);
         return React.cloneElement(origin, {
             style: [
-                origin.props.style,
                 defaultFontFamily,
+                origin.props.style,
             ],
             allowFontScaling: false
         });

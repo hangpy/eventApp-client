@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, FlatList, ScrollView, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { makeSquareRatio, makeMargin} from '../../styles/Style';
+import { makeSquareRatio, makeMargin, getBoldFont} from '../../styles/Style';
 
 export default class HotEventBanner extends Component <{}> {
 
@@ -32,7 +32,7 @@ export default class HotEventBanner extends Component <{}> {
 					<View style={styles.columnDirection}>
                         {/* text part to be fetched later */}
 						<Text style={styles.bannerSectionDescription}>꾸준히 업데이트되는 혜택을 놓치지 마세요!</Text>
-						<Text style={styles.bannerSectionTitle}>아번주 핫 이벤트</Text>
+						<Text style={[styles.bannerSectionTitle, getBoldFont()]}>아번주 핫 이벤트</Text>
                     </View>
 					<Icon name='ios-arrow-forward' size={40} style={styles.margin}/>
                 </View>
@@ -92,11 +92,10 @@ const styles = StyleSheet.create({
     },
 	bannerSectionTitle: {
     	fontSize: 20,
-		fontWeight: 'bold',
 		color: "#000"
 	},
 	bannerSectionDescription: {
-    	fontSize: 10,
+    	fontSize: 14,
 		color: '#000'
 	}
 });

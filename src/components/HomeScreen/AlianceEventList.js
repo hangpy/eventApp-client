@@ -19,7 +19,7 @@ import {
     Alert
 } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
-import {makeSquareRatio, makeSquareMargin, isAndroid, chooseBetween} from '../../styles/Style'
+import {makeSquareRatio, makeSquareMargin, isAndroid, chooseBetween, getBoldFont} from '../../styles/Style'
 import { Navigation } from "react-native-navigation";
 import AllianceEventCard from "./AllianceEventCard";
 
@@ -57,7 +57,7 @@ export default class AllianceEventList extends Component <{}> {
                     <View style={styles.columnDirection}>
                         {/* text part to be fetched later */}
                         <Text style={styles.bannerSectionDescription}>내가 받을 수 있는 다른 혜택이 궁금하세요?</Text>
-                        <Text style={styles.bannerSectionTitle}>이달의 제휴 혜택</Text>
+                        <Text style={[styles.bannerSectionTitle, getBoldFont()]}>이달의 제휴 혜택</Text>
                     </View>
                     <Icon name='ios-arrow-forward' size={40} style={styles.margin}/>
                 </View>
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     },
     bannerSectionTitle: {
         fontSize: 20,
-        fontWeight: 'bold',
         color: "#000"
     },
     bannerSectionDescription: {

@@ -18,7 +18,7 @@ export default class ProfileScreen extends Component <{}> {
             topBar: {
                 title: {
                     text: '마이페이지',
-                    fontWeight: 'bold'
+                    fontFamily: 'NanumSquareRoundB',
                 },
                 visible: true,
                 animate: true,

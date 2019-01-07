@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
-import {DeviceScreen, makeRadius, makeSquareRatio} from "../../styles/Style";
+import {DeviceScreen, getBoldFont, makeRadius, makeSquareRatio} from "../../styles/Style";
 import Icon from "react-native-vector-icons/Ionicons";
 
 export default class CouponTag extends Component <{}> {
@@ -27,13 +27,13 @@ export default class CouponTag extends Component <{}> {
 				<View style={styles.textBox}>
 					<View style={[{flex: 1}, styles.textEachBox]}>
 						<Icon style={{margin: 3}} name={'md-pricetag'} color={'#ff2d55'} size={13}/>
-						<Text style={{fontSize: 13}}>{this.props.couponData.title}</Text>
+						<Text style={[{fontSize: 13}, getBoldFont()]}>{this.props.couponData.title}</Text>
 					</View>
 					<View style={[{flex: 1}, styles.textEachBox]}>
 						<Text style={{fontSize: 12, color: '#8b8b8b'}}>{this.props.couponData.description}</Text>
 					</View>
 					<View style={[{flex: 2}, styles.textEachBox]}>
-						<Text style={{color: "#ff2d55", fontSize: 25, fontWeight: 'bold'}}>{this.props.couponData.discount}</Text>
+						<Text style={[{color: "#ff2d55", fontSize: 25}, getBoldFont()]}>{this.props.couponData.discount}</Text>
 					</View>
 				</View>
 		    </View>
