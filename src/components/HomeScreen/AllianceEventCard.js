@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, AppRegistry, TouchableOpacity, Alert, ImageBackground} from 'react-native';
-import { makeMargin, makeSquareRatio, makeRadius, DeviceScreen } from "../../styles/Style";
+import {makeMargin, makeSquareRatio, makeRadius, DeviceScreen, chooseBetween} from "../../styles/Style";
 import { Navigation } from "react-native-navigation";
 
 export default class AllianceEventCard extends Component <{}> {
@@ -43,21 +43,47 @@ export default class AllianceEventCard extends Component <{}> {
 
                             </View>
                             <View style={{flex:3}}/>
-                            <View style={{flex:1, flexDirection: 'row'}}>
-                                <View style={{flex:1, justifyContent: 'center', marginLeft: 10}}>
-                                    <Text style={{borderColor: '#fff', borderWidth: 0.8, fontSize: 13, color: '#fff', paddingRight: 10, paddingLeft: 10}}>
-                                        {this.props.item.start}  ~  {this.props.item.end}
+                            <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-start'}}>
+                                <View style={{alignSelf: 'flex-start', borderColor: '#fff', borderWidth: 0.8,marginLeft: 10}}>
+                                    <Text style={{ fontSize: 13,color: '#fff', paddingRight: 10, paddingLeft: 10}}>
+                                        기간한정  {this.props.item.start} ~ {this.props.item.end}
                                     </Text>
                                 </View>
-                                <View style={{flex:1}}/>
                             </View>
                         </View>
                     </ImageBackground>
                     <View style={[
                         styles.eventDescription,
                         makeRadius(undefined, false, false,true,true)]}>
-                        {/* Description part to be fetch */}
-                        <Text>{this.props.item.description}</Text>
+                        <View style={{flex:1.8, flexDirection: 'column', flexWrap: 'wrap',paddingLeft: 10}}>
+                            <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                <Text adjustsFontSizeToFit style={{fontSize: 18, fontWeight: 'bold', color: '#000'}}>
+                                    {this.props.item.title}
+                                </Text>
+                                <View style={{flex:1, marginTop: 3}}>
+                                    <Text adjustsFontSizeToFit style={{fontSize: 12, marginLeft: 5}}>
+                                        {this.props.item.subTitle}
+                                    </Text>
+                                </View>
+                            </View>
+                            <View style={{flex:1, justifyContent: 'center'}}>
+                                <Text adjustsFontSizeToFit style={{fontSize: 11}}>
+                                    {this.props.item.location} | {this.props.item.subLocation}
+                                </Text>
+                            </View>
+                        </View>
+                        <View style={{flex:1.2, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                <Text adjustsFontSizeToFit style={{color: '#ff2d55', fontSize: 50, fontFamily: 'NanumSquareRoundB'}}>
+                                    {this.props.item.amount}
+                                </Text>
+                                <Text adjustsFontSizeToFit style={{color: '#ff2d55', fontSize: 20, marginTop: 15, marginLeft: 1}}>{this.props.item.unit}</Text>
+                                <Text adjustsFontSizeToFit style={{color: '#000', fontSize: 25, fontWeight: 'bold', marginTop: 15, marginRight: 10}}>{this.props.item.eventType}</Text>
+                            </View>
+                            {/*<View style={{flex:1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: 20,  marginTop: 15}}>*/}
+                                {/**/}
+                            {/*</View>*/}
+                        </View>
                     </View>
                 </View>
             </TouchableOpacity>
@@ -81,13 +107,20 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         width: DeviceScreen.width * 0.92,
         overflow: 'hidden',
+        borderColor: '#5c5c5c',
+        borderLeftWidth: chooseBetween(0.5, 0, Platform.OS),
+        borderRightWidth: chooseBetween(0.5, 0, Platform.OS),
+        borderTopWidth: chooseBetween(0.5, 0, Platform.OS)
         // backgroundColor: '#9ddd99',
     },
     eventDescription: {
 	    flex: 0.3,
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'row',
         width: DeviceScreen.width * 0.92,
         backgroundColor: '#fff',
+        borderColor: '#5c5c5c',
+        borderLeftWidth: chooseBetween(0.5, 0, Platform.OS),
+        borderRightWidth: chooseBetween(0.5, 0, Platform.OS),
+        borderBottomWidth: chooseBetween(0.5, 0, Platform.OS)
     }
 });

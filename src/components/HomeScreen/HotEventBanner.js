@@ -96,8 +96,7 @@ const styles = StyleSheet.create({
 		color: "#000"
 	},
 	bannerSectionDescription: {
-    	fontSize: 14,
-        fontWeight: 'normal',
+    	fontSize: 10,
 		color: '#000'
 	}
 });

@@ -10,7 +10,7 @@ export default function enableFontPatch() {
 
     const defaultFontFamily = {
         ...Platform.select({
-            android: { fontFamily: 'Roboto' }
+            android: { fontFamily: 'NanumSquareRoundB'  }
         })
     };
 
@@ -18,7 +18,11 @@ export default function enableFontPatch() {
     Text.render = function(...args) {
         const origin = oldRender.call(this, ...args);
         return React.cloneElement(origin, {
-            style: [defaultFontFamily, origin.props.style]
+            style: [
+                origin.props.style,
+                defaultFontFamily,
+            ],
+            allowFontScaling: false
         });
     };
 }

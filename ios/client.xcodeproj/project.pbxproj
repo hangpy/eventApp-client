@@ -42,6 +42,8 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2E6DED4537C641898B2666B5 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 873DD37974834F61B46F6C16 /* AntDesign.ttf */; };
 		3089EDDE21DCF5F600F064F5 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3089EDD921DCF44500F064F5 /* libReactNativeNavigation.a */; };
+		30D7E59B21E3469300E2FD13 /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D7E59921E3469300E2FD13 /* NanumSquareRoundB.ttf */; };
+		30D7E59C21E3469300E2FD13 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D7E59A21E3469300E2FD13 /* NanumSquareRoundR.ttf */; };
 		32F90093AF1B49629F8D08AE /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09C60A415ED84AF3A04AC439 /* MaterialIcons.ttf */; };
 		49F254DB088B49E6806797E0 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A42F1E5345F34DAB870E6655 /* Feather.ttf */; };
 		4FE983510999432698E3DBF4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6107DE050FB45AFBCF187FA /* FontAwesome.ttf */; };
@@ -389,6 +391,8 @@
 		2D02E4901E0B4A5D006451C7 /* client-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "client-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3089EDAE21DCF44400F064F5 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
+		30D7E59921E3469300E2FD13 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		30D7E59A21E3469300E2FD13 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
 		431BA76FDC4441A88CE0C070 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		56CBC21CDEE6481EA587C52C /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -612,6 +616,8 @@
 		5F2F53E628C043C6BD834FB8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				30D7E59921E3469300E2FD13 /* NanumSquareRoundB.ttf */,
+				30D7E59A21E3469300E2FD13 /* NanumSquareRoundR.ttf */,
 				873DD37974834F61B46F6C16 /* AntDesign.ttf */,
 				56CBC21CDEE6481EA587C52C /* Entypo.ttf */,
 				E85D0514417F4149A1548846 /* EvilIcons.ttf */,
@@ -1205,10 +1211,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				30D7E59C21E3469300E2FD13 /* NanumSquareRoundR.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				2E6DED4537C641898B2666B5 /* AntDesign.ttf in Resources */,
 				194435F0ACE44C3C8D94AD7A /* Entypo.ttf in Resources */,
 				9D168A0CD0F94FEA8008F571 /* EvilIcons.ttf in Resources */,
+				30D7E59B21E3469300E2FD13 /* NanumSquareRoundB.ttf in Resources */,
 				49F254DB088B49E6806797E0 /* Feather.ttf in Resources */,
 				4FE983510999432698E3DBF4 /* FontAwesome.ttf in Resources */,
 				AE49D23CF1BF416BAC3C8F80 /* FontAwesome5_Brands.ttf in Resources */,

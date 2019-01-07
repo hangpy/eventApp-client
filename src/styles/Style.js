@@ -6,16 +6,26 @@
  */
 import { StyleSheet, Dimensions } from 'react-native';
 
+/**
+ * get width of device screen
+ */
 export const DeviceScreen = {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height
 };
 
+/**
+ * common shadow styling
+ */
 export const Shadowing = {
     shadowColor: '#1d1d1d',
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 7,
+};
+
+export const getFont = () => {
+
 };
 
 /**
@@ -25,7 +35,12 @@ export const isAndroid = (platform) => (platform === 'android' ? 1 : 0 );
 export const isiOS = (platform) => (platform === 'iOS'  ? 1 : 0);
 export const chooseBetween = (android, ios, platform) => (platform === 'android'? android : ios);
 
+/**
+ * background color to be adapted overall
+ */
 export const backgroundColor = '#EFEFF4';
+
+
 
 /**
  * Function for defining each corner's radius
@@ -79,6 +94,9 @@ export const makeSquareRatio = (widthRatio = 0.92) => StyleSheet.create({
     }
 });
 
+/**
+ * generate margin style accordingly device width
+ */
 export const makeMargin = (widthRatio = 0.92) => StyleSheet.create({
     marginShowingNext: {
         marginTop: DeviceScreen.height * 0.02,
