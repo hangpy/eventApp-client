@@ -37,7 +37,9 @@ export default class AdBanner extends Component <{}> {
             <ScrollView horizontal
                         showsHorizontalScrollIndicator={false}>
                 {/* banner part to be fetched later */}
-                <FlatList horizontal={true}
+                <FlatList
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
                     marginRight={10}
                     data={this.state.banners}
                     renderItem={
@@ -45,7 +47,7 @@ export default class AdBanner extends Component <{}> {
                             <TouchableOpacity onPress={() => {
                                 Navigation.push(this.props.componentId, {
                                     component: {
-                                        name: 'AllianceDetailPage'
+                                        name: 'AdDetailPage'
                                     }
                                 })}}
                             >

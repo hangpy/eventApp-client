@@ -41,7 +41,8 @@ if(Platform.OS === 'android'){
             hideOnScroll: true,
             drawBehind: true ,
             title: {
-                alignment: 'center'
+                alignment: 'center',
+                fontFamily: 'NanumSquareRoundB',
             },
         },
         bottomTabs: {

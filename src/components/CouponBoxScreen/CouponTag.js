@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
 		borderColor: '#aeaeae',
 		width: DeviceScreen.width*0.92*0.92,
 		height: DeviceScreen.width*0.92*0.92/3.5,
-		overflow: 'hidden'
+		overflow: 'hidden',
+		marginBottom: 2
     },
 	imageBox: {
 		flex: 1.2,

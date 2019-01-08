@@ -15,5 +15,7 @@ export const registerScreens = () => {
     Navigation.registerComponent('TitleLogo', () => require('./components/HomeScreen/TitleLogo').default);
     Navigation.registerComponent('SearchButton', () => require('./components/HomeScreen/SearchButton').default);
     Navigation.registerComponent('MarkerButton', () => require('./components/HomeScreen/MarkerButton').default);
-
+    Navigation.registerComponent('WishButton', () => require('./components/Buttons/WishButton').default);
+    Navigation.registerComponent('ShareButton', () => require('./components/Buttons/ShareButton').default);
+    Navigation.registerComponent('AdDetailPage', () => require('./components/HomeScreen/AdDetailPage').default);
 };

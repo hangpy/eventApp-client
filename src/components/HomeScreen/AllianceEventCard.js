@@ -23,7 +23,7 @@ export default class AllianceEventCard extends Component <{}> {
                         component: {
                             name: 'AllianceDetailPage',
                             passProps: {
-                                key: this.props.item.key
+                                item: this.props.item
                             },
                             options: {
 
@@ -60,8 +60,8 @@ export default class AllianceEventCard extends Component <{}> {
                                 <Text adjustsFontSizeToFit style={[{fontSize: 18, color: '#000'}, getBoldFont()]}>
                                     {this.props.item.title}
                                 </Text>
-                                <View style={{flex:1, marginTop: 3}}>
-                                    <Text adjustsFontSizeToFit style={{fontSize: 12, marginLeft: 5}}>
+                                <View style={{flex:1, marginTop: 4}}>
+                                    <Text adjustsFontSizeToFit style={{fontSize: 10, marginLeft: 5}}>
                                         {this.props.item.subTitle}
                                     </Text>
                                 </View>

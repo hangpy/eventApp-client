@@ -17,9 +17,11 @@ export default class HomeScreen extends Component <{}> {
         return {
             statusBar: {
                 style: 'dark',
-                backgroundColor: '#fff'
+                backgroundColor: '#fff',
             },
             topBar: {
+                // drawBehind: true,
+                // hideOnScroll: true,
                 title: {
                     color: '#000',
                     fontFamily: 'NanumSquareRoundB',

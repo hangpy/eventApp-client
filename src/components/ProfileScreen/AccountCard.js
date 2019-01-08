@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, ImageBackground, Image, AppRegistry } from 'react-native';
-import { makeSquareRatio, makeMargin, Shadowing, makeRadius, DeviceScreen } from "../../styles/Style";
+import {makeSquareRatio, makeMargin, Shadowing, makeRadius, DeviceScreen, getBoldFont} from "../../styles/Style";
 import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class AccountCard extends Component <{}> {
@@ -33,7 +33,7 @@ export default class AccountCard extends Component <{}> {
                     </View>
 				</View>
 				<View style={[styles.nameBox, {flex: 1}]}>
-					<Text style={[styles.name]}>
+					<Text style={[styles.name, getBoldFont()]}>
 						{/* To be fetch */}
 						항벅
 					</Text>
@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
 	},
 	name:{
 		fontSize: 18,
-		fontWeight: '500',
 		color: '#404040',
 	},
 	accountBox: {

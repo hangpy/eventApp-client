@@ -51,7 +51,7 @@ export default class HistoryCard extends Component <{}> {
                         return(
                             <View style={{flex:1, justifyContent: 'center', width: '100%'}}>
                                 <View style={[styles.titleBox, {flex: 0.8}]}>
-                                    <Text style={{color: '#323232', fontSize: 16}}>나의 쿠폰 사용 내역</Text>
+                                    <Text style={[{color: '#323232', fontSize: 16}]}>나의 쿠폰 사용 내역</Text>
                                 </View>
                                 <View style={[styles.historyBox, {flex: 2.4}]}>
                                     <FlatList
@@ -83,7 +83,7 @@ export default class HistoryCard extends Component <{}> {
                                 </View>
                                 <View style={[styles.buttonBox, {flex: 0.8}]}>
                                     {/* TODO: to be touchable and connected to stack navigation page for showing history */}
-                                    <Text style={{fontSize: 23, color: '#323232', marginRight: 10}}>모두 보기</Text>
+                                    <Text style={[{fontSize: 23, color: '#323232', marginRight: 10}]}>모두 보기</Text>
                                     <Icon name='ios-arrow-forward' size={28} color={'#323232'} style={{marginRight: 20}}/>
                                 </View>
                             </View>

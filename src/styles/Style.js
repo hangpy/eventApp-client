@@ -24,6 +24,9 @@ export const Shadowing = {
     shadowRadius: 7,
 };
 
+/**
+ * alternative to resolve font problem of specific android device's font cutting off.
+ */
 export const getBoldFont = () => {
     return {fontFamily: 'NanumSquareRoundB'};
 };
