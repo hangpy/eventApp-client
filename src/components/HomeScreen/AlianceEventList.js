@@ -59,7 +59,7 @@ export default class AllianceEventList extends Component <{}> {
                         <Text style={styles.bannerSectionDescription}>내가 받을 수 있는 다른 혜택이 궁금하세요?</Text>
                         <Text style={[styles.bannerSectionTitle, getBoldFont()]}>이달의 제휴 혜택</Text>
                     </View>
-                    <Icon name='ios-arrow-forward' size={40} style={styles.margin}/>
+                    {/*<Icon name='ios-arrow-forward' size={60} style={styles.margin}/>*/}
                 </View>
                 {/* banner part to be fetched later */}
                 <FlatList data={this.state.banners}
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
     bannerSectionTitle: {
-        fontSize: 20,
+        fontSize: 35,
         color: "#000"
     },
     bannerSectionDescription: {

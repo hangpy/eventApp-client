@@ -1,7 +1,7 @@
 /** 
  * AdDetailPage
  * @author 
- * created on 2019-01-08
+ * created on 2019-01-11
  */
 
 import React, { Component } from 'react';

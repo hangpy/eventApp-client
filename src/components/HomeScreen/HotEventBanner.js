@@ -32,9 +32,9 @@ export default class HotEventBanner extends Component <{}> {
 					<View style={styles.columnDirection}>
                         {/* text part to be fetched later */}
 						<Text style={styles.bannerSectionDescription}>꾸준히 업데이트되는 혜택을 놓치지 마세요!</Text>
-						<Text style={[styles.bannerSectionTitle, getBoldFont()]}>아번주 핫 이벤트</Text>
+						<Text style={[styles.bannerSectionTitle, getBoldFont()]}>아번주 핫! 이벤트</Text>
                     </View>
-					<Icon name='ios-arrow-forward' size={40} style={styles.margin}/>
+					{/*<Icon name='ios-arrow-forward' size={60} style={styles.margin}/>*/}
                 </View>
 				<ScrollView horizontal
 							showsHorizontalScrollIndicator={false}>
@@ -42,6 +42,7 @@ export default class HotEventBanner extends Component <{}> {
 					<FlatList horizontal={true}
 							  marginRight={10}
 							  data={this.state.banners}
+							  keyExtractor={(item, key) => key.toString()}
 							  renderItem={
 								  ({item}) => (
 									  <View style={[styles.bannerContainer,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
 	bannerSectionTitle: {
-    	fontSize: 20,
+    	fontSize: 35,
 		color: "#000"
 	},
 	bannerSectionDescription: {

@@ -23,7 +23,16 @@ export default class AllianceDetailPage extends Component <{}> {
 			{key: 1, ref: require('../../image/fire_al.jpg'), color: 'green'},
 			{key: 2, ref: require('../../image/flyingball_al.jpg'), color: 'yellow'},
 			{key: 3, ref: require('../../image/shrimp_al.jpeg'), color: 'red'}
-		]
+		],
+		detailDescription:
+			'동 해물과 백 두산이 마르고 닳도록' +
+			'하느님이 보우 하사 우리 나라만세이!' +
+			'1. 테스트1\n' +
+			'2. 테스트2\n' +
+			'3. 테스트3\n' +
+			'4. 이것도 되냐!' +
+			'' +
+			'으아아아아아앙아아아아'
 	};
 
 	static options(passProps) {
@@ -107,6 +116,9 @@ export default class AllianceDetailPage extends Component <{}> {
 
 						{/* This View is area for description of event */}
 						<Text style={[{fontSize: 30, marginTop: 30, color: '#000'}, getBoldFont()]}>상세 내용</Text>
+						<Text>
+							{this.state.detailDescription}
+						</Text>
 
 					</View>
 				</View>

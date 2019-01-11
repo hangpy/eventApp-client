@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { ScrollView, FlatList, View, StyleSheet, Text, Dimensions, Alert, TouchableOpacity } from 'react-native';
-import { makeSquareRatio, makeMargin, makeRadius } from '../../styles/Style';
+import {makeSquareRatio, makeMargin, makeRadius, DeviceScreen} from '../../styles/Style';
 import {Navigation} from "react-native-navigation";
 
 export default class AdBanner extends Component <{}> {
@@ -18,9 +18,9 @@ export default class AdBanner extends Component <{}> {
     componentWillMount(): void {
         this.setState({
             banners: [
-                { key: 'Banner1' },
-                { key: 'Banner2' },
-                { key: 'Banner3' },
+                { key: 'Banner1', color: '#e9ba29'},
+                { key: 'Banner2', color: '#457044' },
+                { key: 'Banner3', color: '#c7464f' },
             ],
         });
     }
@@ -35,13 +35,18 @@ export default class AdBanner extends Component <{}> {
              *              user flip the scrollView
              */
             <ScrollView horizontal
-                        showsHorizontalScrollIndicator={false}>
+                        showsHorizontalScrollIndicator={false}
+                        style={{marginBottom: 20}}
+                        pagingEnabled={true}
+            >
                 {/* banner part to be fetched later */}
                 <FlatList
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
-                    marginRight={10}
+                    // marginRight={10}
                     data={this.state.banners}
+                    pagingEnabled={true}
+                    keyExtractor={(item, key) => key.toString()}
                     renderItem={
                         ({item}) => (
                             <TouchableOpacity onPress={() => {
@@ -53,9 +58,11 @@ export default class AdBanner extends Component <{}> {
                             >
                                 <View style={[
                                     styles.bannerContainer,
-                                    makeSquareRatio(0.88).threeToOne,
-                                    makeMargin(0.88).marginShowingNext,
-                                    makeRadius()]}>
+                                    {backgroundColor: item.color},
+                                    // makeSquareRatio(0.88).threeToOne,
+                                    // makeMargin(0.88).marginShowingNext,
+                                    // makeRadius()
+                                ]}>
                                     <Text style={styles.bannerText}>{item.key}</Text>
                                 </View>
                             </TouchableOpacity>
@@ -71,11 +78,12 @@ const styles = StyleSheet.create({
     bannerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#dd3e3a',
-        shadowColor: '#000',
-        shadowOffset: { width: 1, height: 1 },
-        shadowOpacity: 0.6,
-        shadowRadius: 3,
+        // shadowColor: '#000',
+        // shadowOffset: { width: 1, height: 1 },
+        // shadowOpacity: 0.6,
+        // shadowRadius: 3,
+        width: DeviceScreen.width,
+        height: DeviceScreen.width * 0.3
     },
     bannerText: {
         fontSize: 15,

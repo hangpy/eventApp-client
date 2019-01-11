@@ -17,6 +17,19 @@ import { registerScreens } from "./src/screens";
 
 registerScreens();
 Navigation.events().registerAppLaunchedListener(() => {
+
+    if(Platform.OS === 'ios') {
+        Navigation.setDefaultOptions({
+            statusBar: {
+                visible: true,
+                style: 'light'
+            },
+            topBar: {
+                hideOnScroll: true
+            },
+        });
+    }
+
     Navigation.setRoot({
         root: {
             component: {
@@ -50,6 +63,7 @@ if(Platform.OS === 'android'){
         }
     });
 }
+
 
 
 
