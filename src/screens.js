@@ -1,21 +1,34 @@
 import { Navigation } from 'react-native-navigation';
 
+import Initializing from './Initializing';
+import App from '../App';
+import HomeScreenContainer from './components/HomeScreen/HomeScreen';
+import AllianceDetailPage from './components/HomeScreen/AllianceDetailPage';
+import AdDetailPage from './components/HomeScreen/AdDetailPage';
+import SearchButton from './components/HomeScreen/SearchButton';
+import MarkerButton from './components/HomeScreen/MarkerButton';
+import TitleLogo from './components/HomeScreen/TitleLogo';
+import CouponBoxScreen from './components/CouponBoxScreen/CouponBoxScreen';
+import ProfileScreen from './components/ProfileScreen/ProfileScreen';
+import SettingScreen from './components/SettingScreen/SettingScreen';
+import WishButton from './components/Buttons/WishButton';
+import ShareButton from './components/Buttons/ShareButton';
 
 /**
  * place all screens we want to initialize before creating root navigation
  */
-export const registerScreens = () => {
-    Navigation.registerComponent('Initializing', () => require('./Initializing').default);
-    Navigation.registerComponent('App', () => require('../App').default);
-    Navigation.registerComponent('HomeScreen', () => require('./components/HomeScreen/HomeScreen').default);
-    Navigation.registerComponent( 'CouponBoxScreen', () => require('./components/CouponBoxScreen/CouponBoxScreen').default);
-    Navigation.registerComponent( 'ProfileScreen', () => require('./components/ProfileScreen/ProfileScreen').default);
-    Navigation.registerComponent( 'SettingScreen', () => require('./components/SettingScreen/SettingScreen').default);
-    Navigation.registerComponent('AllianceDetailPage', () => require('./components/HomeScreen/AllianceDetailPage').default);
-    Navigation.registerComponent('TitleLogo', () => require('./components/HomeScreen/TitleLogo').default);
-    Navigation.registerComponent('SearchButton', () => require('./components/HomeScreen/SearchButton').default);
-    Navigation.registerComponent('MarkerButton', () => require('./components/HomeScreen/MarkerButton').default);
-    Navigation.registerComponent('WishButton', () => require('./components/Buttons/WishButton').default);
-    Navigation.registerComponent('ShareButton', () => require('./components/Buttons/ShareButton').default);
-    Navigation.registerComponent('AdDetailPage', () => require('./components/HomeScreen/AdDetailPage').default);
+export const registerScreens = (Provider, store) => {
+    Navigation.registerComponentWithRedux('App', () => App, Provider, store);
+    Navigation.registerComponentWithRedux('Initializing', () => Initializing, Provider, store);
+    Navigation.registerComponentWithRedux('HomeScreen', () => HomeScreenContainer, Provider, store);
+    Navigation.registerComponentWithRedux('AllianceDetailPage', () => AllianceDetailPage, Provider, store);
+    Navigation.registerComponentWithRedux('AdDetailPage', () => AdDetailPage, Provider, store);
+    Navigation.registerComponentWithRedux('SearchButton', () => SearchButton, Provider, store);
+    Navigation.registerComponentWithRedux('MarkerButton', () => MarkerButton, Provider, store);
+    Navigation.registerComponentWithRedux('TitleLogo', () => TitleLogo, Provider, store);
+    Navigation.registerComponentWithRedux( 'CouponBoxScreen', () => CouponBoxScreen, Provider, store);
+    Navigation.registerComponentWithRedux( 'ProfileScreen', () => ProfileScreen, Provider, store);
+    Navigation.registerComponentWithRedux( 'SettingScreen', () => SettingScreen, Provider, store);
+    Navigation.registerComponentWithRedux('WishButton', () => WishButton, Provider, store);
+    Navigation.registerComponentWithRedux('ShareButton', () => ShareButton, Provider, store);
 };

@@ -14,10 +14,15 @@ import {name as appName} from './app.json';
 
 import { Navigation } from "react-native-navigation";
 import { registerScreens } from "./src/screens";
+import { Provider } from 'react-redux';
+import configureStore from './src/store/configureStore';
+import { YellowBox } from 'react-native';
 
-registerScreens();
+YellowBox.ignoreWarnings(['Remote debugger']);
+
+const store = configureStore();
+registerScreens(Provider, store);
 Navigation.events().registerAppLaunchedListener(() => {
-
     if(Platform.OS === 'ios') {
         Navigation.setDefaultOptions({
             statusBar: {

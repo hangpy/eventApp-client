@@ -8,13 +8,16 @@ import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, AppRegistry } from 'react-native';
 
 /* TODO: logo image will be inserted */
-export default TitleLogo = (props) => {
+
+const TitleLogo = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.logo}>쿠디!</Text>
         </View>
     )
-}
+};
+
+export default TitleLogo;
 
 
 const styles = StyleSheet.create({

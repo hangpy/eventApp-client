@@ -7,14 +7,16 @@
 import React, { Component } from 'react';
 import {Platform, View, StyleSheet, Text, Image, Alert, TouchableOpacity} from 'react-native';
 
-export default SearchButton = (props) => {
+const SearchButton = (props) => {
     return (
         <TouchableOpacity
             onPress={() => {Alert.alert('showing map for searching box')}}>
             <Image source={require('../../image/ios-search-50.png')} style={styles.icon}/>
         </TouchableOpacity>
     )
-}
+};
+
+export default SearchButton;
 
 const styles = StyleSheet.create({
 	container: {

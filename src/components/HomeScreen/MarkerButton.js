@@ -7,14 +7,18 @@
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Image, TouchableOpacity, Alert } from 'react-native';
 
-export default MapButton = (props) => {
+const MapButton  = (props) => {
     return (
         <TouchableOpacity
-            onPress={() => {Alert.alert('showing map for searching with location')}}>
+            onPress={() => {
+                Alert.alert('showing map for searching with location')
+            }}>
             <Image source={require('../../image/ios-marker-50.png')} style={styles.icon}/>
         </TouchableOpacity>
-    )
-}
+    );
+};
+
+export default MapButton
 
 const styles = StyleSheet.create({
 	container: {
