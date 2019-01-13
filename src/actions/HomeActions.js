@@ -4,12 +4,15 @@
  */
 
 import * as types from './ActionTypes';
+import { createAction } from 'redux-actions';
 
 // example
 
-export const increment = () => ({
-    type: types.INCREMENT
-});
+/**
+ * by using creationAction func, we can easily create action object, then by setting second parameter
+ * we can define parameter to be passed when we use this func for dispatch in each component
+ */
+export const increment = createAction(types.INCREMENT,/* ({number}) => ({number})*/);
 
 export const setColor = (color) => ({
     type: types.SET_COLOR,

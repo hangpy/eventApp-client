@@ -17,8 +17,12 @@ import { registerScreens } from "./src/screens";
 import { Provider } from 'react-redux';
 import configureStore from './src/store/configureStore';
 import { YellowBox } from 'react-native';
-
 YellowBox.ignoreWarnings(['Remote debugger']);
+console.ignoredYellowBox = [
+    'Remote debugger',
+    'Warning: isMounted… is deprecated',
+    'Module RCTImageLoader'
+];
 
 const store = configureStore();
 registerScreens(Provider, store);

@@ -2,8 +2,10 @@
  *  declare initial state
  */
 
-const initialState = {
-    number: 0
-};
+import { Map, fromJS } from 'immutable';
 
-export default initialState
+const initialState = fromJS({
+    number: 100
+});
+
+export default initialState;

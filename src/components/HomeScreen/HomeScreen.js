@@ -82,11 +82,14 @@ class HomeScreen extends Component <{}> {
 
 // function to connect store's initial state to current component;'s props
 const mapStateToProps = (state) => ({
-    number: state.home.number,
+    number: state.getIn(['home', 'number']),
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onIncrement: () => dispatch(actions.increment()),
+    onIncrement: () => {
+        console.log('get in mapDispatchToProps');
+        return dispatch(actions.increment(2))
+    },
 });
 
 HomeScreen.propsType = {
@@ -95,7 +98,6 @@ HomeScreen.propsType = {
 };
 
 HomeScreen.defaultProps = {
-    number: 0,
     onIncrement: () => console.warn('onIncrement not defined')
 };
 
