@@ -2,13 +2,14 @@ import { createAction, handleActions } from 'redux-actions';
 import {fromJS} from "immutable";
 
 const initialState = fromJS({
-    number: 100
+    number: 1
 });
 
 /**
  * Action Type
  */
 const INCREMENT = 'counter/INCREMENT';
+const DECREMENT = 'counter/DECREMENT';
 
 // example
 
@@ -19,6 +20,24 @@ const INCREMENT = 'counter/INCREMENT';
  * we can define parameter to be passed when we use this func for dispatch in each component
  */
 export const increment = createAction(INCREMENT,/* ({number}) => ({number})*/);
+export const decrement = createAction(DECREMENT,/* ({number}) => ({number})*/);
+
+// not working
+export function incrementAsync() {
+    return dispatch => {
+        // 1초 뒤 디스패치
+        console.log('get in incrementAsync func');
+        setTimeout(
+            () => { dispatch(increment(1)) },
+            1000
+        );
+    }
+};
+
+// onIncrement: () => {
+//     console.log('get in mapDispatchToProps');
+//     return dispatch(increment(1))
+// },
 
 
 /**
@@ -33,6 +52,12 @@ export default handleActions({
         /* this action only have purpose to homeReducer's Map object not of rootReducer, which have super object
          * in rootReducers. */
         return state.set('number', state.get('number') + action.payload);
+    },
+    [DECREMENT]: (state, action) =>
+    {
+        /* this action only have purpose to homeReducer's Map object not of rootReducer, which have super object
+         * in rootReducers. */
+        return state.set('number', state.get('number') - action.payload);
     }
 
 }, initialState)

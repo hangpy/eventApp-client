@@ -5,6 +5,7 @@
 
 import { combineReducers } from "redux-immutable";
 import counter from './counter';
+import post from './post';
 
 /**
  * this root reducer combine each reducers, the thing is to keep in mind that we should
@@ -12,6 +13,7 @@ import counter from './counter';
  */
 export default combineReducers({
     counter: counter,
+    post: post
 });
 
 

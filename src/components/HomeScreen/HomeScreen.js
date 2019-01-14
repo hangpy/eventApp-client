@@ -12,7 +12,8 @@ import {Navigation} from "react-native-navigation";
 import {backgroundColor, isAndroid} from "../../styles/Style";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {increment} from '../../modules/counter';
+import {increment, decrement, incrementAsync} from '../../modules/counter';
+import { getPost } from "../../modules/post";
 
 class HomeScreen extends Component <{}> {
     static options(passProps) {
@@ -60,15 +61,39 @@ class HomeScreen extends Component <{}> {
         };
     }
 
-	render() {
+    loadData = () => {
+        this.props.onGetPost(this.props.number);
+    };
+    componentDidMount(): void {
+      this.loadData();
+    }
+    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
+        if(this.props.number !== prevProps.number) {
+            this.loadData();
+        }
+    }
+
+    render() {
 
 		return (
 		    /* TODO: need to  consider about design for background color */
             <ScrollView  showsVerticalScrollIndicator={false} style={{backgroundColor: '#fafafa'}}>
                 <View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000'}}>
                     <Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux Test [ 삭제 예정 ] </Text>
-                    <Button title={'더하기'} onPress={this.props.onIncrement} color={'blue'}/>
+                    <Button title={'+'} onPress={this.props.onIncrement} color={'blue'}/>
+                    <Button title={'-'} onPress={this.props.onDecrement} color={'red'}/>
+                    <Button title={'1초뒤 +'} onPress={this.props.onIncrementAsync} color={'blue'}/>
                     <Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>initial state: {this.props.number}</Text>
+                </View>
+                <View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000', borderTopWidth: 0}}>
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux thunk [ 삭제 예정 ] </Text>
+                    <Button title={'post'} onPress={this.props.onIncrement} color={'blue'}/>
+                    <Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>title: {
+                        this.props.pending ? '로딩중...' : (
+                            this.props.error ? '에러발생!' :
+                                this.props.title
+                        )
+                    }</Text>
                 </View>
                 <View style={styles.container}>
                     <AdBanner componentId={this.props.componentId}/>
@@ -80,26 +105,42 @@ class HomeScreen extends Component <{}> {
 	}
 }
 
-// function to connect store's initial state to current component;'s props
-const mapStateToProps = (state) => ({
-    number: state.getIn(['counter', 'number']),
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    onIncrement: () => {
-        console.log('get in mapDispatchToProps');
-        return dispatch(increment(2))
-    },
-});
-
 HomeScreen.propsType = {
     number: PropTypes.number,
     onIncrement: PropTypes.func,
 };
 
 HomeScreen.defaultProps = {
-    onIncrement: () => console.warn('onIncrement not defined')
+    onIncrement: () => console.warn('onIncrement not defined'),
+    onDecrement: () => console.warn('onDecrement not defined'),
 };
+
+// function to connect store's initial state to current component;'s props
+const mapStateToProps = (state) => ({
+    number: state.getIn(['counter', 'number']),
+    pending: state.getIn(['post', 'pending']),
+    error: state.getIn(['post', 'error']),
+    title: state.getIn(['post', 'data', 'title'])
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onIncrement: () => {
+        console.log('get in mapDispatchToProps');
+        return dispatch(increment(1))
+    },
+    onDecrement: () => {
+        return dispatch(decrement(1))
+    },
+    /**
+     * To use like this func which return func, must add middleware when configure store
+     */
+    onIncrementAsync: () => {
+        return dispatch(incrementAsync())
+    },
+    onGetPost: (postId) => {
+        return dispatch(getPost(postId));
+    }
+});
 
 const HomeScreenContainer = connect(
     mapStateToProps,
