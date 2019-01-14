@@ -12,7 +12,7 @@ import {Navigation} from "react-native-navigation";
 import {backgroundColor, isAndroid} from "../../styles/Style";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as actions from '../../actions/HomeActions';
+import {increment} from '../../modules/counter';
 
 class HomeScreen extends Component <{}> {
     static options(passProps) {
@@ -82,13 +82,13 @@ class HomeScreen extends Component <{}> {
 
 // function to connect store's initial state to current component;'s props
 const mapStateToProps = (state) => ({
-    number: state.getIn(['home', 'number']),
+    number: state.getIn(['counter', 'number']),
 });
 
 const mapDispatchToProps = (dispatch) => ({
     onIncrement: () => {
         console.log('get in mapDispatchToProps');
-        return dispatch(actions.increment(2))
+        return dispatch(increment(2))
     },
 });
 

@@ -4,17 +4,16 @@
  */
 
 import { combineReducers } from "redux-immutable";
-import homeReducer from './HomeReducer';
+import counter from './counter';
 
 /**
  * this root reducer combine each reducers, the thing is to keep in mind that we should
  * import 'redux-immutable' not just 'redux'
  */
-const rootReducer = combineReducers({
-    home: homeReducer,
+export default combineReducers({
+    counter: counter,
 });
 
-export default rootReducer;
 
 /**
  * If it is deprecated, above all code will be moved to index.js file
