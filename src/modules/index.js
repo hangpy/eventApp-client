@@ -6,6 +6,7 @@
 import { combineReducers } from "redux-immutable";
 import counter from './counter';
 import post from './post';
+import card from './card';
 
 /**
  * this root reducer combine each reducers, the thing is to keep in mind that we should
@@ -13,7 +14,8 @@ import post from './post';
  */
 export default combineReducers({
     counter: counter,
-    post: post
+    post: post,
+    card: card,
 });
 
 

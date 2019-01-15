@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {increment, decrement, incrementAsync} from '../../modules/counter';
 import { getPost } from "../../modules/post";
+import { getCard } from "../../modules/card";
 
 class HomeScreen extends Component <{}> {
     static options(passProps) {
@@ -63,6 +64,7 @@ class HomeScreen extends Component <{}> {
 
     loadData = () => {
         this.props.onGetPost(this.props.number);
+        this.props.onGetCard();
     };
     componentDidMount(): void {
       this.loadData();
@@ -87,7 +89,6 @@ class HomeScreen extends Component <{}> {
                 </View>
                 <View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000', borderTopWidth: 0}}>
                     <Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux thunk [ 삭제 예정 ] </Text>
-                    <Button title={'post'} onPress={this.props.onIncrement} color={'blue'}/>
                     <Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>title: {
                         this.props.pending ? '로딩중...' : (
                             this.props.error ? '에러발생!' :
@@ -98,7 +99,7 @@ class HomeScreen extends Component <{}> {
                 <View style={styles.container}>
                     <AdBanner componentId={this.props.componentId}/>
                     <HotEventBanner/>
-                    <AllianceEventList componentId={this.props.componentId}/>
+                    <AllianceEventList componentId={this.props.componentId} cards={this.props.alliance_events}/>
                 </View>
 		    </ScrollView>
         );
@@ -120,7 +121,8 @@ const mapStateToProps = (state) => ({
     number: state.getIn(['counter', 'number']),
     pending: state.getIn(['post', 'pending']),
     error: state.getIn(['post', 'error']),
-    title: state.getIn(['post', 'data', 'title'])
+    title: state.getIn(['post', 'data', 'title']),
+    alliance_events: state.getIn(['card', 'data', 'alliance_events']),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -139,6 +141,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     onGetPost: (postId) => {
         return dispatch(getPost(postId));
+    },
+    onGetCard: () => {
+        return dispatch(getCard());
     }
 });
 

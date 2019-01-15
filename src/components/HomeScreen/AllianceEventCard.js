@@ -11,6 +11,8 @@ import { Navigation } from "react-native-navigation";
 
 export default class AllianceEventCard extends Component <{}> {
 
+    state
+
 	render() {
 		return (
             <TouchableOpacity
@@ -30,14 +32,14 @@ export default class AllianceEventCard extends Component <{}> {
                             }
                         }
                     })
-                }}
-            >
+                }}>
                 <View style={[styles.cardContainer,
                     makeSquareRatio(0.92).sixteenToNine,
                     makeMargin(0.92).marginVertical]}>
-                    <ImageBackground source={this.props.item.imageSource}
+                    <ImageBackground source={{uri: this.props.item.imageSource}}
                                      style={[styles.eventImage, makeRadius(undefined, true, true,false,false)]}
                                      imageStyle={{resizeMode: 'cover'}}>
+                        {console.log(this.props.imageSource)}
                         <View style={{backgroundColor: 'rgba(0,0,0,0.4)', flex: 1}} >
                             <View style={{flex: 1}}>
 

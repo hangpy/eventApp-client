@@ -39,9 +39,9 @@ export default handleActions({
     },
     [GET_POST_SUCCESS]: (state, action) => {
         const { title } = action.payload.data;
-        return state.setIn(['data', 'title'], title).set('pending', false);
+        return state.setIn(['data', 'title'], title).set('pending', false).set('error', false);
     },
     [GET_POST_FAILURE]: (state, action) => {
-        return state.set('error', true);
+        return state.set('error', true).set('pending', false);
     }
 }, initialState)
