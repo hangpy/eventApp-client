@@ -24,7 +24,7 @@ class HomeScreen extends Component <{}> {
                 backgroundColor: '#fff',
             },
             topBar: {
-                // drawBehind: true,
+                drawBehind: true,
                 // hideOnScroll: true,
                 title: {
                     color: '#000',
@@ -80,22 +80,22 @@ class HomeScreen extends Component <{}> {
 		return (
 		    /* TODO: need to  consider about design for background color */
             <ScrollView  showsVerticalScrollIndicator={false} style={{backgroundColor: '#fafafa'}}>
-                <View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000'}}>
-                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux Test [ 삭제 예정 ] </Text>
-                    <Button title={'+'} onPress={this.props.onIncrement} color={'blue'}/>
-                    <Button title={'-'} onPress={this.props.onDecrement} color={'red'}/>
-                    <Button title={'1초뒤 +'} onPress={this.props.onIncrementAsync} color={'blue'}/>
-                    <Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>initial state: {this.props.number}</Text>
-                </View>
-                <View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000', borderTopWidth: 0}}>
-                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux thunk [ 삭제 예정 ] </Text>
-                    <Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>title: {
-                        this.props.pending ? '로딩중...' : (
-                            this.props.error ? '에러발생!' :
-                                this.props.title
-                        )
-                    }</Text>
-                </View>
+                {/*<View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000'}}>*/}
+                    {/*<Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux Test [ 삭제 예정 ] </Text>*/}
+                    {/*<Button title={'+'} onPress={this.props.onIncrement} color={'blue'}/>*/}
+                    {/*<Button title={'-'} onPress={this.props.onDecrement} color={'red'}/>*/}
+                    {/*<Button title={'1초뒤 +'} onPress={this.props.onIncrementAsync} color={'blue'}/>*/}
+                    {/*<Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>initial state: {this.props.number}</Text>*/}
+                {/*</View>*/}
+                {/*<View style={{justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#000', borderTopWidth: 0}}>*/}
+                    {/*<Text style={{fontSize: 20, fontWeight: 'bold'}}>Redux thunk [ 삭제 예정 ] </Text>*/}
+                    {/*<Text style={{flex:1, justifyContent: 'center', alignItems: 'center', fontSize: 20, fontWeight: 'bold'}}>title: {*/}
+                        {/*this.props.pending ? '로딩중...' : (*/}
+                            {/*this.props.error ? '에러발생!' :*/}
+                                {/*this.props.title*/}
+                        {/*)*/}
+                    {/*}</Text>*/}
+                {/*</View>*/}
                 <View style={styles.container}>
                     <AdBanner componentId={this.props.componentId}/>
                     <HotEventBanner/>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingBottom: 20,
-        paddingTop: isAndroid(Platform.OS)*60,
+        paddingTop: isAndroid(Platform.OS)*50,
     },
 });
 

@@ -1,3 +1,4 @@
+import { Platform } from 'react-native'
 import { createAction, handleActions } from 'redux-actions';
 import {fromJS} from "immutable";
 import axios from 'axios';
@@ -26,7 +27,17 @@ const getCardPending = createAction(GET_CARD_PENDING);
 const getCardSuccess = createAction(GET_CARD_SUCCESS);
 const getCardFailure = createAction(GET_CARD_FAILURE);
 
-const getCardAPI = () => axios.get(`http://localhost:3000/state/card`);
+const getCardAPI = () => {
+    if(Platform.OS === 'android') {
+        /**
+         * Android simulator perceive the localhost addr as the device itself.
+         * Thus, should config addr as absolute ip addr
+         */
+        return axios.get(`http://192.168.0.13:3000/state/card`);
+    } else {
+        return axios.get(`http://localhost:3000/state/card`);
+    }
+};
 
 export const getCard = () => dispatch => {
     dispatch(getCardPending());
@@ -46,7 +57,7 @@ export const getCard = () => dispatch => {
     }).catch((err) => {
         dispatch(getCardFailure());
         throw(err);
-    });
+    }).done();
 };
 
 export default handleActions({
